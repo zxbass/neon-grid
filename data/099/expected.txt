@@ -1,0 +1,6 @@
+FRAME 0: full (1024 px)
+FRAME 1: 2 rects, 96 px changed
+FRAME 2: 1 rect, 48 px changed
+=== PART 2 ===
+FRAME 3: 1 rect, 16 px changed
+FRAME 3: pointer at (12,8) size 4x4 color=7

@@ -1,0 +1,3 @@
+PAYLOAD: MEET_AT_NEON_ALLEY_3AM
+=== PART 2 ===
+WROTE stego.bmp (ok, 16x16)

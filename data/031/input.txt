@@ -1,0 +1,8 @@
+encode: MERCURY
+encode: NEON
+encode: M
+encode: ME
+decode: TUVSQ1VSWQ==
+decode: TkVPTg==
+decode: TQ==
+decode: TUU=

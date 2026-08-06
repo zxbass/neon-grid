@@ -1,0 +1,4 @@
+CHECKSUM: 0xC8C4
+=== PART 2 ===
+VALID: YES
+CORRUPT: BAD (checksum mismatch)

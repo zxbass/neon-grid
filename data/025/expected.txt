@@ -1,0 +1,31 @@
+KEY: 0x42
+TEXT: GRID TERMINAL 00: raven#000 linked 0x0000 at 00:00:00 status=OK
+GRID TERMINAL 01: raven#017 linked 0x010D at 01:01:01 status=WAIT
+GRID TERMINAL 02: raven#034 linked 0x021A at 02:02:02 status=LINK
+GRID
+=== PART 2 ===
+KEY: MERCURY!
+TEXT: Sector 00: awake awake awake the meridian is shifting shift+0x00 ~OK line 000 ready
+Sector 01: awake awake awake the meridian is shifting shift+0x07 ~WAIT line 041 ready
+Sector 02: awake awake awake the meridian is shifting shift+0x0E ~LINK line 082 ready
+Sector 03: awake awake awake the meridian is shifting shift+0x15 ~SYNC line 123 ready
+Sector 04: awake awake awake the meridian is shifting shift+0x1C ~IDLE line 164 ready
+Sector 05: awake awake awake the meridian is shifting shift+0x23 ~BUSY line 205 ready
+Sector 06: awake awake awake the meridian is shifting shift+0x2A ~NEW line 246 ready
+Sector 07: awake awake awake the meridian is shifting shift+0x31 ~DATA line 287 ready
+Sector 08: awake awake awake the meridian is shifting shift+0x38 ~OK line 328 ready
+Sector 09: awake awake awake the meridian is shifting shift+0x3F ~WAIT line 369 ready
+Sector 10: awake awake awake the meridian is shifting shift+0x46 ~LINK line 410 ready
+Sector 11: awake awake awake the meridian is shifting shift+0x4D ~SYNC line 451 ready
+Sector 12: awake awake awake the meridian is shifting shift+0x54 ~IDLE line 492 ready
+Sector 13: awake awake awake the meridian is shifting shift+0x5B ~BUSY line 533 ready
+Sector 14: awake awake awake the meridian is shifting shift+0x62 ~NEW line 574 ready
+Sector 15: awake awake awake the meridian is shifting shift+0x69 ~DATA line 615 ready
+Sector 16: awake awake awake the meridian is shifting shift+0x70 ~OK line 656 ready
+Sector 17: awake awake awake the meridian is shifting shift+0x77 ~WAIT line 697 ready
+Sector 18: awake awake awake the meridian is shifting shift+0x7E ~LINK line 738 ready
+Sector 19: awake awake awake the meridian is shifting shift+0x85 ~SYNC line 779 ready
+Sector 20: awake awake awake the meridian is shifting shift+0x8C ~IDLE line 820 ready
+Sector 21: awake awake awake the meridian is shifting shift+0x93 ~BUSY line 861 ready
+Sector 22: awake awake awake the meridian is shifting shift+0x9A ~NEW line 902 ready
+Sector 23: awake awake awake the meridian is shifting shift+0xA1 ~DATA line 943 ready

@@ -1,0 +1,8 @@
+PUT a 1
+GET a
+GET b
+PUT b 2
+GET a
+PUT c 3
+GET c
+GET b

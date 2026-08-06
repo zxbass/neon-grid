@@ -1,0 +1,7 @@
+WIPED: 47 strings
+CARVER: JPEG @ 0x00000000 (still OK)
+CARVER: PNG @ 0x00001000 (still OK)
+CARVER: ZIP @ 0x00002000 (still OK)
+=== PART 2 ===
+WEAKNESS: origin hash is unanchored -> anchor chain head to a signed timestamp
+HARDENED: chain head commits (term, server_uptime) via signed nonce

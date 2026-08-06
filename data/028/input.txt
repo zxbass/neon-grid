@@ -1,0 +1,5 @@
+seed: NEONGRID
+n: 8
+known: 0d0cfefa3d0ca323002f97b070967f0e8ba7f597540f614a63789057ecefa845
+steps: 3
+expected: 16e7b514ae5acba9e8a056f5c7003d5598aeefec5cba8de0cd869f63e36bdcfc

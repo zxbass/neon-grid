@@ -1,0 +1,10 @@
+DIRTY: page 0x0001 0x0100 0x0200  (3 pages)
+=== PART 2 ===
+MODULE: 64 bytes  key=X
+STRINGS:
+  /proc/sys/kernel/hostname
+  dmesg
+  hide_module
+  pid 1
+  bouncer
+ROOTKIT: hides process 'bouncer'

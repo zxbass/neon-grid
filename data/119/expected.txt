@@ -1,0 +1,9 @@
+LAYER 1: OK (version=9)
+LAYER 2: decrypted (len=186)
+LAYER 3: unpacked (password=GATEKEEPERf48)
+LAYER 4: crc OK
+LAYER 5: ACCESS GRANTED
+=== PART 2 ===
+GATE OPEN: CODE=NEON-1337-GRID
+"Ты стоял у чёрных врат, и они открылись.
+ НЕОН ПОМНИТ ТЕБЯ."

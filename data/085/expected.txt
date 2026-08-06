@@ -1,0 +1,7 @@
+JPEG @ 0x00000000
+PNG  @ 0x00123ABC
+ZIP  @ 0x00300000
+=== PART 2 ===
+carved_0.jpg 89222 bytes
+carved_1.png 12345 bytes
+carved_2.zip 4051 bytes

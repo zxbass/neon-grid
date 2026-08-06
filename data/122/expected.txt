@@ -1,0 +1,7 @@
+A: 8
+B: 19
+SHARED: 2
+=== PART 2 ===
+SEQ 5: ACK
+SEQ 5 (replay): REPLAY DROP
+SEQ 5 (forge): DROP

@@ -1,0 +1,5 @@
+CONNECT: flags=0x02 client=zen-agent keepalive=60
+PUBLISH: topic=neon/alerts qos=0
+SUBSCRIBE: topic=neon/#
+=== PART 2 ===
+PAYLOAD: ICE_BREACH_LEVEL_3

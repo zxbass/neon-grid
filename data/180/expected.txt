@@ -1,0 +1,4 @@
+SCORE: 0-5
+=== PART 2 ===
+BOUNCES: 5
+WINNER: RIGHT

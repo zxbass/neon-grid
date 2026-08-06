@@ -1,0 +1,7 @@
+GIF89a 16x16 global_colors=256 bg=0
+=== PART 2 ===
+FRAME 0: 16x16 delay=10 local_pal=no
+FRAME 1: 16x16 delay=10 local_pal=no
+FRAME 2: 16x16 delay=10 local_pal=no
+FRAME 3: 16x16 delay=10 local_pal=no
+KEY LAYER: 4e 45 4f 4e -> NEON

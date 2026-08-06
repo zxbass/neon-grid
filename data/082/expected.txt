@@ -1,0 +1,5 @@
+ELF64 LE  type=ET_DYN  machine=x86-64  entry=0x401000  shdr=13
+=== PART 2 ===
+SECTION .rodata (offset=0x2000 size=0x80)
+FLAG: crow_was_here_2049
+.text entry bytes: 48 8b 05 00 00 00 00 00

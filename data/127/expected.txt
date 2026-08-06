@@ -1,0 +1,5 @@
+SENT 4 fragments (len=4096)
+REASSEMBLED: 4096 bytes, order OK
+=== PART 2 ===
+REORDERED: 4096 bytes in 4 fragments
+TUNNEL OK (XOR+CRC verified)

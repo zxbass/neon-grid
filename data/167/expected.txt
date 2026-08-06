@@ -1,0 +1,11 @@
+crow: MAYBE
+zen: MAYBE
+alley: NO
+grid: MAYBE
+mercury: MAYBE
+black: NO
+gate: MAYBE
+neon: MAYBE
+=== PART 2 ===
+BITS SET: 15
+MAP: B6 1A 77 02

@@ -1,0 +1,6 @@
+PAYLOAD: 16384 bytes (deflate ok)
+=== PART 2 ===
+NOTES.TXT:
+  The archive is the key.
+  CRC of manifest: 0x1234ABCD
+EXTRACTED: 3 files, 12345 bytes total

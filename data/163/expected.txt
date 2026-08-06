@@ -1,0 +1,7 @@
+a: HIT 1
+b: MISS
+a: HIT 1
+c: HIT 3
+b: MISS
+=== PART 2 ===
+CACHE (MRU first): c=3 a=1

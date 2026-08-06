@@ -1,0 +1,41 @@
+# --- Go build artifacts ---
+neon
+neon-grid
+neongrid
+gen
+gendata
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/bin/
+dist/
+
+# --- Editor / IDE ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- OS ---
+Thumbs.db
+desktop.ini
+
+# --- Go tooling ---
+go.work
+go.work.sum
+vendor/
+
+# --- NEON//GRID runtime data ---
+# Персональный журнал прогресса TUI (neongrid)
+.neongrid/
+
+# бинарники при сборке из cmd/
+cmd/neon/neon
+cmd/gen/gen
+cmd/gendata/gendata
+cmd/neongrid/neongrid

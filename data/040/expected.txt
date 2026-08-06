@@ -1,0 +1,7 @@
+name=HEIST_PLAN.TXT size=4096 mode=0644 type=0 mtime=1000000000
+name=TRACKING.DB size=128 mode=0644 type=0 mtime=1000000000
+name=VAULT size=0 mode=0755 type=5 mtime=1000000000
+=== PART 2 ===
+HEIST_PLAN.TXT: EXTRACTED (cksum OK)
+TRACKING.DB: EXTRACTED (cksum BAD)
+VAULT: DIR (size=0)

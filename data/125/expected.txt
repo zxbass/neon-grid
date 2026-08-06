@@ -1,0 +1,6 @@
+GIF87a 32x24 colors=16
+bytes=0x1DA
+ROUNDTRIP: OK
+=== PART 2 ===
+FULL: 1738 bytes
+DIFF: 791 bytes   <- экономнее в 2.2 раза

@@ -1,0 +1,5 @@
+NODE  NAME  TYPE  OUTPUT  INPUTS
+0     GATE   tcp   udp     -
+1     LOBBY  udp   tcp     0
+2     VAULT  tcp   icmp    1
+3     CORE   icmp  -       2

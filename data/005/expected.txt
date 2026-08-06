@@ -1,0 +1,9 @@
+magic    : FW v1.4
+name     : omega-b1
+code_len : 512
+crc      : 0xC040BF3F
+api      : 3.2
+hw       : 7.1
+desc     : Primary bootloader rev 2
+=== PART 2 ===
+CRC OK (0xC040BF3F)

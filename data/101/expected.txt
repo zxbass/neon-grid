@@ -1,0 +1,9 @@
+STR: "NEON GRID"
+STR: "root"
+STR: "/bin/sh"
+STR: "zen@neon"
+STR: "CROW"
+STR: "mercury"
+=== PART 2 ===
+STRINGS: 6
+LONGEST: NEON GRID

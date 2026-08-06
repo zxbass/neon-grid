@@ -1,0 +1,5 @@
+== NEON-BBS v2.4 ==
+1: General
+2: Files
+3: SYSOP
+4: Exit

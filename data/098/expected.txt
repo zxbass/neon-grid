@@ -1,0 +1,3 @@
+QR 21x21 finders at (0,0),(0,14),(14,0)
+=== PART 2 ===
+DATA: WELCOME_TO_THE_GRID

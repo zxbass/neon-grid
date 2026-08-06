@@ -1,0 +1,7 @@
+read -> 0x007F0001
+write -> 0x007F0012
+exit -> 0x007F0000
+=== PART 2 ===
+GOT[read]=0x007F0001
+GOT[write]=0x007F0012
+GOT[exit]=0x007F0000

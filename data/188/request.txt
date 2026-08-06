@@ -1,0 +1,4 @@
+GET /index.html HTTP/1.1
+Host: neon.grid
+User-Agent: zen-1.0
+

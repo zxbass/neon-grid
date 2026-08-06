@@ -1,0 +1,8 @@
+PACKETS: 3
+PKT 0: T=1.00 LEN=20
+PKT 1: T=1.00 LEN=65
+PKT 2: T=1.00 LEN=69
+=== PART 2 ===
+STREAM: GET /index.html HTTP/1.1
+Host: neon.grid
+

@@ -1,0 +1,4 @@
+PAYLOAD: DROP_AT_NEON_PIER
+=== PART 2 ===
+STEGO WROTE: 860 bytes
+NOISE ERROR: 2.7% bits flipped -> still decodable: YES

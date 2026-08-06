@@ -1,0 +1,7 @@
+PE32 x86  sections=5  entry=0x401000  subsys=GUI
+=== PART 2 ===
+.rdata strings:
+  pw_let_the_raven_out
+  pass_is_not_here
+  OMEGA-DYNE
+FOUND: pw_let_the_raven_out

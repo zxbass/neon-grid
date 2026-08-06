@@ -1,0 +1,4 @@
+PATH: 0(tcp) -> 1(udp) -> 2(tcp) -> 3(icmp)
+=== PART 2 ===
+PATH: 0 -> 2 -> 4 -> 5 (cost=3)
+ALTERNATIVE: 0 -> 1(ghost) -> 3 -> 5 (cost=4)

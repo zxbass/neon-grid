@@ -1,0 +1,9 @@
+close x1
+exit_group x1
+mmap x1
+nanosleep x1
+open x1
+read x3
+write x2
+=== PART 2 ===
+TOTAL: 10 FAILED: 1

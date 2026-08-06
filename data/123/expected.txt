@@ -1,0 +1,4 @@
+PEAK BIN: 22
+PEAK FREQ: 687.5 Hz
+=== PART 2 ===
+DIGITS: 42

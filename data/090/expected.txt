@@ -1,0 +1,8 @@
+FOUND:
+  ssh crow@10.0.0.7 -p 2200
+  password = "l33t_r4v3n"
+  /home/raven/drop/keys.pem
+=== PART 2 ===
+2039-01-02 03:04:05 login 10.0.0.7
+2039-01-02 03:45:00 login 10.0.0.7
+2039-01-03 00:12:33 logout 10.0.0.7

@@ -1,0 +1,5 @@
+LINE 47: HASH MISMATCH (expected 1ea38e061e7a82e6... got f0c0001bbf718688...)
+=== PART 2 ===
+PATCHED: 3 lines rewritten, chain recomputed
+VERIFY: OK (entire chain)
+WEAKNESS: first entry unsigned -> need anchor

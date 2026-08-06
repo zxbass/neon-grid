@@ -1,0 +1,3 @@
+SIMPLIFIED: x = a + b
+=== PART 2 ===
+FOLDED: x = 5

@@ -1,0 +1,4 @@
+TABLES: cmap glyf head hhea hmtx loca maxp
+=== PART 2 ===
+UNITS: 2048 GLYPHS: 1
+A -> GLYPH 0

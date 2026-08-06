@@ -1,0 +1,5 @@
+WAL: 12 ok, 1 corrupted
+FINAL: a=1 b=2 c=DELETED
+=== PART 2 ===
+APPLIED: 12  SKIPPED: 1 (truncated tail)
+SNAPSHOT: a=1 b=2 c=DELETED (3 entries)

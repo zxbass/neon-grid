@@ -1,0 +1,10 @@
+read(3, 0x7fff0010, 128) = 128
+write(1, 0x7fff0010, 128) = 128
+open("/etc/passwd", 0) = 4
+read(4, 0x7fff0110, 4096) = 2048
+close(4) = 0
+mmap(0, 4096, 3) = 0x7f0000
+write(1, 0x7fff0120, 64) = -1 EAGAIN
+nanosleep(0x7fff0200) = 0
+read(3, 0x7fff0130, 4096) = 0
+exit_group(0) = ?

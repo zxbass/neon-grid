@@ -1,0 +1,4 @@
+ZOMBIES: 2 [101 201]
+ORPHANS: 1 [300]
+=== PART 2 ===
+REPARENTED: 1 (adopted by PID 1)

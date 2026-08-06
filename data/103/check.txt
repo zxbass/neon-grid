@@ -1,0 +1,2 @@
+for i in range(len(input)):
+    if input[i] ^ 0x33 != stored[i]: reject

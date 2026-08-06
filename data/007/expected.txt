@@ -1,0 +1,9 @@
+ID=0000000A nick=CROW     lvl=7 karma=99 cred=123456 ip=10.0.0.7
+ID=0000000C nick=shadow   lvl=9 karma=5 cred=5000 ip=8.8.4.4
+ID=00000011 nick=gr1m     lvl=6 karma=3 cred=40000 ip=1.2.3.4
+ID=00000007 nick=zen      lvl=2 karma=50 cred=100 ip=0.0.0.1
+ID=00000064 nick=reave    lvl=8 karma=77 cred=99999 ip=5.6.7.8
+=== PART 2 ===
+SUSPECT: 0000000C shadow
+SUSPECT: 00000011 gr1m
+AVG=53711

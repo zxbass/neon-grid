@@ -1,0 +1,7 @@
+NODE  NAME    GHOST  INPUTS
+0     GATE    -      -
+1     LOBBY   ghost  0
+2     VAULT   -      0
+3     HALL    -      1
+4     ATRIUM  -      2
+5     CORE    -      3,4

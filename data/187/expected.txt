@@ -1,0 +1,3 @@
+QUERY: neon.grid TYPE=A ID=0x1234
+=== PART 2 ===
+ANSWER: neon.grid -> 93.184.216.34 TTL=300

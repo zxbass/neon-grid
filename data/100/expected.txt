@@ -1,0 +1,4 @@
+CODEC: 4-bit DPCM  avg_err=7.9  ratio=4.0x
+=== PART 2 ===
+DPCM:  avg_err=7.9
+ADAPT: avg_err=1.5  (better by 81.6%)

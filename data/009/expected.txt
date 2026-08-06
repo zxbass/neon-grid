@@ -1,0 +1,3 @@
+SEAL: 0xB4A5B831
+=== PART 2 ===
+SEAL BAD (expected 0x00000000, got 0xB4A5B831)
