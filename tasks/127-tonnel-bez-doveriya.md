@@ -15,6 +15,7 @@
 
 ```text
 magic 0x4A4B (u16) | seq (u32 BE) | flags (u8) | len (u16 BE) | payload | tag (u16)
+```
 
 - `payload` — данные фрагмента (≤ 1200 байт);
 - `tag = crc16_ccitt(seq || flags || payload)` (CRC из 016);
@@ -29,6 +30,7 @@ magic 0x4A4B (u16) | seq (u32 BE) | flags (u8) | len (u16 BE) | payload | tag (u
 ```text
 SENT 4 fragments (len=4096)
 REASSEMBLED: 4096 bytes, order OK
+```
 
 ## Часть 2 — Порядок и шифрование
 
@@ -48,6 +50,7 @@ UDP не гарантирует порядок — протокол должен
 ```text
 REORDERED: 4096 bytes in 4 fragments
 TUNNEL OK (XOR+CRC verified)
+```
 
 ## Подсказки
 

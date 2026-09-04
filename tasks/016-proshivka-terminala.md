@@ -22,6 +22,7 @@
 ```text
 BLOCK 00 checksum OK
 BLOCK 01 checksum BAD (got=0x7A want=0x85)
+```
 
 ## Часть 2 — Прошивка с адресом
 
@@ -37,6 +38,7 @@ BLOCK 01 checksum BAD (got=0x7A want=0x85)
 BAD: 0x00000000
 BAD: 0x0000FF00
 GOOD: 0x00008000
+```
 
 ## Подсказки
 

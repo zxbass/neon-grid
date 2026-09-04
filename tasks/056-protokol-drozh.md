@@ -16,6 +16,7 @@
 
 ```text
 0x5A | seq(u8) | 8 байт данных | crc16(data)
+```
 
 crc16 — тот же CRC-CCITT (полином 0x1021, init 0xFFFF, без xorout),
 что в миссии 016. Получатель отвечает `ACK <seq>` (простая строка)
@@ -34,6 +35,7 @@ SEQ 1 ACK
 SEQ 1 NAK (retry 1) -> ACK
 ...
 DONE: 4096 bytes
+```
 
 ## Часть 2 — Окно
 
@@ -46,6 +48,7 @@ DONE: 4096 bytes
 ```text
 WINDOW=1 retries=27
 WINDOW=4 retries=9
+```
 
 ## Подсказки
 

@@ -37,6 +37,7 @@ crc      : 0xDEADBEEF
 api      : 3.2
 hw       : 7.1
 desc     : Primary bootloader rev 2
+```
 
 ## Часть 2 — Валидация
 
@@ -50,6 +51,7 @@ little-endian, по модулю 0xFFFFFFFF. Если равна `crc` из за
 
 ```text
 CRC OK (0xDEADBEEF)
+```
 
 ## Подсказки
 

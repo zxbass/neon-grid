@@ -23,6 +23,7 @@
 ```text
 127.0.0.1 23    -> OPEN
 127.0.0.1 9999  -> CLOSED
+```
 
 ## Часть 2 — Баннер
 
@@ -35,6 +36,7 @@
 
 ```text
 BANNER: OMEGA-DYNE GATEWAY v2.1 // UNAUTHORIZED ACCESS IS FELONY
+```
 
 ## Подсказки
 

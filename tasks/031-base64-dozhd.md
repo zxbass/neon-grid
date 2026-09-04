@@ -20,11 +20,13 @@ Base64: 3 байта → 4 символа из алфавита
 
 ```text
 encode: MERCURY
+```
 
 ### Выход
 
 ```text
 TUVSQ1VSWQ==
+```
 
 Проверь первые 3 байта `MER` = `0x4D 0x45 0x52` → биты
 `010011 010100 010101 010010` → `T U V S`.
@@ -37,11 +39,13 @@ TUVSQ1VSWQ==
 
 ```text
 decode: TUVSQ1VSWQ==
+```
 
 ### Выход
 
 ```text
 PLAINTEXT: MERCURY
+```
 
 ## Подсказки
 

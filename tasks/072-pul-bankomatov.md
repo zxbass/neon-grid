@@ -21,6 +21,7 @@
 
 ```text
 W=8  N=1000  T=134ms  (single=1020ms, speedup=7.6x)
+```
 
 ## Часть 2 — Баланс нагрузки
 
@@ -33,6 +34,7 @@ W=8  N=1000  T=134ms  (single=1020ms, speedup=7.6x)
 
 ```text
 STATIC: 1432ms  DYNAMIC: 1210ms  (лучше: dynamic)
+```
 
 ## Подсказки
 

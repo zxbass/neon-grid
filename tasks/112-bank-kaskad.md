@@ -22,6 +22,7 @@
 
 ```text
 RACE DETECTED: total=1999 (expected 2000)
+```
 
 ## Часть 2 — Каскад
 
@@ -38,6 +39,7 @@ RACE DETECTED: total=1999 (expected 2000)
 LOCK ORDER: ok (no deadlock)
 INVARIANT: total=3000 across 10000 tx
 CRASH RECOVERY: restored to tx #9821 (19 rolled back)
+```
 
 ## Подсказки
 

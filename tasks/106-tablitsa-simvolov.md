@@ -27,6 +27,7 @@ FUNCS:
   0x401000 init         size=64
   0x401040 validate_key size=512
   0x401240 decrypt      size=256
+```
 
 ## Часть 2 — Портрет программы
 
@@ -40,6 +41,7 @@ FUNCS:
 init -> validate_key
 validate_key -> decrypt
 decrypt -> (неизвестно)
+```
 
 ## Подсказки
 

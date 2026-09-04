@@ -24,6 +24,7 @@ XOR всех дисков страйпа (без паритетного).
 ```text
 DEAD: disk2
 RESTORED: disk2[0]=0x4D
+```
 
 ## Часть 2 — Извлечение файла
 
@@ -34,6 +35,7 @@ RESTORED: disk2[0]=0x4D
 
 ```text
 RAID.TXT: THE_PURGE_BEGINS_AT_DUSK
+```
 
 ## Подсказки
 

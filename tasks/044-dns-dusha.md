@@ -28,6 +28,7 @@ A-записи из ответа:
 ```text
 ID=0x1234 RCODE=0
 example.com. -> 93.184.216.34
+```
 
 ## Часть 2 — Сжатие имён
 
@@ -41,6 +42,7 @@ example.com. -> 93.184.216.34
 ```text
 example.com. CNAME -> edge.example.net.
 edge.example.net. A -> 192.0.2.1
+```
 
 ## Подсказки
 

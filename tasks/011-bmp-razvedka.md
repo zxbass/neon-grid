@@ -27,6 +27,7 @@
 
 ```text
 WIDTH=64 HEIGHT=32 BPP=8 DATA=2048
+```
 
 Поддержи только `BPP=8` (палитра) и `BPP=24` (RGB), иначе `UNSUPPORTED`.
 
@@ -44,6 +45,7 @@ WIDTH=64 HEIGHT=32 BPP=8 DATA=2048
 
 ```text
 @@@@%%%.....:====...
+```
 
 ## Подсказки
 

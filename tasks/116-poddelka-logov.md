@@ -18,6 +18,7 @@
 
 ```text
 LINE 47: HASH MISMATCH (expected a1b2... got c3d4...)
+```
 
 ## Часть 2 — Устойчивая подделка
 
@@ -29,6 +30,7 @@ LINE 47: HASH MISMATCH (expected a1b2... got c3d4...)
 ```text
 PATCHED: 3 lines rewritten, chain recomputed
 VERIFY: OK (entire chain)
+```
 
 Затем ответь на вопрос: как форензик узнает о подделке, если цепочка
 сходится? (Подсказка: измени `hashlist.txt`/временные метки.) Выведи
@@ -36,6 +38,7 @@ VERIFY: OK (entire chain)
 
 ```text
 WEAKNESS: first entry unsigned -> need anchor
+```
 
 ## Подсказки
 

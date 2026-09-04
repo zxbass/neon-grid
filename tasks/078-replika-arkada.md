@@ -24,6 +24,7 @@
 ```text
 FINAL: a=3 b=2 c=DELETED
 JOURNAL: 12 entries
+```
 
 ## Часть 2 — Разделение и слияние
 
@@ -37,6 +38,7 @@ JOURNAL: 12 entries
 
 ```text
 CONVERGED: x=2 (seq 5 from B)
+```
 
 ## Подсказки
 

@@ -28,6 +28,7 @@
 
 ```text
 FAT12 1440KB  bytes/sector=512  clusters=2847  root=224
+```
 
 ## Часть 2 — Чтение файла
 
@@ -46,6 +47,7 @@ FAT12 1440KB  bytes/sector=512  clusters=2847  root=224
 ```text
 SECRET.TXT (512 bytes)
 THE COURIER MOVES AT MIDNIGHT
+```
 
 ## Подсказки
 

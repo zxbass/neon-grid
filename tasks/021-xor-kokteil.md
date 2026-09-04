@@ -20,6 +20,7 @@
 ```text
 cipher: 1b 0d 0b 08 1d 0f 1b 0d 08 05 02 0a
 K: 0x55
+```
 
 Расшифруй и выведи открытый текст.
 
@@ -27,6 +28,7 @@ K: 0x55
 
 ```text
 PLAINTEXT: NEONGRID_V1
+```
 
 Проверка: `0x1b ^ 0x55 = 0x4e = 'N'`.
 
@@ -39,11 +41,13 @@ PLAINTEXT: NEONGRID_V1
 ```text
 cipher: 09 5e 52 1f 5e 13 52 0a 5f 06 5c 4e 5a 06 5b 1c 5f 4e 09 5e 54 1f 4d 1b 5a
 key:    CROW
+```
 
 ### Выход
 
 ```text
 PLAINTEXT: MESSAGE_FOR_THE_GRID
+```
 
 (Найди свой ответ — сверься, что выглядит осмысленно.)
 

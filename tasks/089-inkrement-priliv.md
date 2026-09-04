@@ -17,6 +17,7 @@
 
 ```text
 <offset:u32 LE><len:u32 LE><новые байты>   — блок, который отличается
+```
 
 (блоки одинаковых байт между отличающимися — пропусти).
 
@@ -26,6 +27,7 @@
 ```text
 PATCH: 3 blocks (offset=0 len=4, offset=16 len=2, offset=32 len=8)
 ROUNDTRIP OK
+```
 
 ## Часть 2 — Каскад бэкапов
 
@@ -37,6 +39,7 @@ v1 к v2, ...). Затем восстанови `vN` из `base + p1 + p2 + ...`
 ```text
 PATCHES: 5  TOTAL_BYTES: 2048 (base=4096)
 RECONSTRUCT v5: OK (identical)
+```
 
 ## Подсказки
 

@@ -19,6 +19,7 @@ CM=8, FLG, MTIME, XFL, OS) + deflate-поток + trailer (CRC32 + ISIZE).
 
 ```text
 PAYLOAD: 40960 bytes (deflate ok)
+```
 
 ## Часть 2 — Tar внутри
 
@@ -29,11 +30,13 @@ PAYLOAD: 40960 bytes (deflate ok)
 NOTES.TXT:
   The archive is the key.
   CRC of manifest: 0x1234ABCD
+```
 
 И посчитай общий объём извлечённых файлов:
 
 ```text
 EXTRACTED: 3 files, 12345 bytes total
+```
 
 ## Подсказки
 

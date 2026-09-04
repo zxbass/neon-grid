@@ -26,6 +26,7 @@
 FRAME 0: full (1024 px)
 FRAME 1: 2 rects, 96 px changed
 FRAME 2: 1 rect, 48 px changed
+```
 
 ## Часть 2 — Палец на экране
 
@@ -35,6 +36,7 @@ FRAME 2: 1 rect, 48 px changed
 
 ```text
 FRAME 3: pointer at (12, 8) size 4x4 color=7
+```
 
 ## Подсказки
 

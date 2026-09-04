@@ -24,6 +24,7 @@
 $ echo "hello from the grid" | ./tunnel
 SENT 5 blocks  RECEIVED 5 blocks
 MIRROR OK
+```
 
 ## Часть 2 — Полный дуплекс
 
@@ -42,6 +43,7 @@ $ ./chat 127.0.0.1 1700
 > ping
 [echo] ping
 TUNNEL OVER HTTP: OK (12 frames)
+```
 
 ## Подсказки
 

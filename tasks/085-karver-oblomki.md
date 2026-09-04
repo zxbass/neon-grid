@@ -26,6 +26,7 @@
 JPEG @ 0x00000000
 PNG  @ 0x00123ABC
 ZIP  @ 0x00300000
+```
 
 ## Часть 2 — Восстановление
 
@@ -42,6 +43,7 @@ ZIP  @ 0x00300000
 carved_0.png 12345 bytes
 carved_1.jpg 89222 bytes
 carved_2.zip 4051 bytes
+```
 
 ## Подсказки
 

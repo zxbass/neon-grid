@@ -28,6 +28,7 @@
 
 ```text
 ID=0000000A nick=CROW      lvl=7 karma=99 cred=123456 ip=10.0.0.7
+```
 
 `last_ip` в 6 байт упакован как `10.0.0.7` (до NUL или до конца поля).
 Если `id == 0xFFFFFFFF` — это конец таблицы, остановись.
@@ -45,6 +46,7 @@ ID=0000000A nick=CROW      lvl=7 karma=99 cred=123456 ip=10.0.0.7
 SUSPECT: 0000000C shadow
 SUSPECT: 00000011 gr1m
 AVG=31257
+```
 
 ## Подсказки
 

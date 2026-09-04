@@ -31,6 +31,7 @@
 
 ```text
 RATE=8000 CH=1 BITS=16 SAMPLES=8000 DURATION=1.000s
+```
 
 ## Часть 2 — DTMF-детектор
 
@@ -55,6 +56,7 @@ RATE=8000 CH=1 BITS=16 SAMPLES=8000 DURATION=1.000s
 
 ```text
 KEYS: 5 1 9 1 8 0
+```
 
 ## Подсказки
 

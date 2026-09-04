@@ -30,6 +30,7 @@
 
 ```text
 name=HEIST_PLAN.TXT size=4096 mode=0644 type=0 mtime=1000000000
+```
 
 ## Часть 2 — Распаковка и чек-сумма
 
@@ -45,6 +46,7 @@ name=HEIST_PLAN.TXT size=4096 mode=0644 type=0 mtime=1000000000
 ```text
 HEIST_PLAN.TXT: EXTRACTED (cksum OK)
 TRACKING.DB: EXTRACTED (cksum BAD)
+```
 
 ## Подсказки
 

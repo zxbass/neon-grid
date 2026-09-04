@@ -19,11 +19,13 @@
 ```text
 cipher: YNJY RGQJ YMJ YSTJXJINQD
 n: 5
+```
 
 ### Выход
 
 ```text
 PLAINTEXT: SHUT DOWN THE NEONESINITY
+```
 
 Проверка: `Y - 5 = T`, `N - 5 = I`, `J - 5 = E`…
 
@@ -42,6 +44,7 @@ PLAINTEXT: SHUT DOWN THE NEONESINITY
 ```text
 BEST SHIFT: 13
 TEXT: THE GRID IS ALIVE
+```
 
 ## Подсказки
 

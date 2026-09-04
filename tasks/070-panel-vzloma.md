@@ -22,6 +22,7 @@
 ```text
 CODE: 4A 0C 33 4C 0A 2B  -> DECRYPTED: 16 86 105 22 80 113
 CHECK: 16 86 105 22 80 113 -> MATCH
+```
 
 ## Часть 2 — Гонка с трекером
 
@@ -38,6 +39,7 @@ CHECK: 16 86 105 22 80 113 -> MATCH
 ```text
 ROUNDS: 3/5 passed
 FINAL: ACCESS GRANTED
+```
 
 ## Подсказки
 

@@ -25,6 +25,7 @@
 
 ```text
 CODEC: 4-bit DPCM  avg_err=12.3  ratio=4.0x
+```
 
 ## Часть 2 — Адаптивный шаг
 
@@ -38,6 +39,7 @@ CODEC: 4-bit DPCM  avg_err=12.3  ratio=4.0x
 ```text
 DPCM:  avg_err=12.3
 ADAPT: avg_err=7.1  (better by 42%)
+```
 
 ## Подсказки
 

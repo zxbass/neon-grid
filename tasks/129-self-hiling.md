@@ -35,6 +35,7 @@ STAGE 1: OK (version=9)
 STAGE 2: OK (len=512)
 ...
 STAGE 10: CODE=704213 ACCESS GRANTED
+```
 
 ## Часть 2 — Самовосстановление
 
@@ -52,6 +53,7 @@ STAGE 10: CODE=704213 ACCESS GRANTED
 DAMAGE: stage 3 block #12
 HEALED: using mirror copy (offset 0x4A000)
 RESULT: ACCESS GRANTED (self-healed 1/1)
+```
 
 ## Подсказки
 

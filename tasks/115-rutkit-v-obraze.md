@@ -19,6 +19,7 @@
 
 ```text
 DIRTY: page 0x0001 0x0200 0x0800  (3 pages)
+```
 
 ## Часть 2 — Анатомия руткита
 
@@ -37,12 +38,14 @@ STRINGS:
   dmesg
   hide_module
   pid 1
+```
 
 Определи, что делает руткит: он скрывает процесс с именем `bouncer`.
 Выведи:
 
 ```text
 ROOTKIT: hides process 'bouncer'
+```
 
 ## Подсказки
 

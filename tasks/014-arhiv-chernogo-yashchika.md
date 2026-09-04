@@ -27,6 +27,7 @@
 ```text
 FLIGHT01.LOG   size=4096 crc=0xA1B2C3D4
 AUDIO.CHUNK    size=88000 crc=0xDEADBEEF
+```
 
 ## Часть 2 — Распаковка + проверка
 
@@ -36,6 +37,7 @@ AUDIO.CHUNK    size=88000 crc=0xDEADBEEF
 ```text
 FLIGHT01.LOG: EXTRACTED (CRC OK)
 AUDIO.CHUNK:  EXTRACTED (CRC MISMATCH)
+```
 
 Для файла с битым CRC выведи также ожидаемый и фактический CRC.
 
@@ -44,6 +46,7 @@ AUDIO.CHUNK:  EXTRACTED (CRC MISMATCH)
 ```text
 FLIGHT01.LOG: EXTRACTED (CRC OK)
 AUDIO.CHUNK:  EXTRACTED (CRC MISMATCH expected=0xDEADBEEF got=0x00112233)
+```
 
 ## Подсказки
 

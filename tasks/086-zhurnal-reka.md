@@ -29,6 +29,7 @@
 ```text
 WAL: 12 ok, 1 corrupted
 FINAL: a=1 b=2 c=DELETED
+```
 
 ## Часть 2 — Восстановление после краша
 
@@ -45,6 +46,7 @@ FINAL: a=1 b=2 c=DELETED
 ```text
 APPLIED: 12  SKIPPED: 1 (truncated tail)
 SNAPSHOT: a=1 b=2 c=DELETED (3 entries)
+```
 
 ## Подсказки
 

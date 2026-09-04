@@ -17,6 +17,7 @@
 2049-12-01 03:14:15 10.0.0.7 USER crow ACTION login OK
 2049-12-01 03:15:00 10.0.0.8 USER zen ACTION read file:plan.doc OK
 2049-12-01 03:15:22 10.0.0.9 USER ghost ACTION sudo rm -rf / OK
+```
 
 Парсер: разбивает на поля, фильтрует события `ACTION`. Выведи
 статистику по `USER` (имя → число действий) и топ-3:
@@ -24,6 +25,7 @@
 ```text
 ACTIONS: crow:1 zen:1 ghost:1
 TOP: ghost zen crow
+```
 
 ## Часть 2 — Параллельный парсер
 
@@ -38,6 +40,7 @@ SUSPICIOUS: 4
   crow:12:01 sudo rm -rf /
   ghost:... delete data:users.db
 MERGE CHECK: parts=4 rows=1_000_000 matches_single=1_000_000
+```
 
 ## Подсказки
 

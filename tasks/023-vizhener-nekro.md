@@ -21,11 +21,13 @@
 ```text
 cipher: VFHFVXRQLYIKTMAZIQBVCUIRB
 key:    NEON
+```
 
 ### Выход
 
 ```text
 PLAINTEXT: THEBLACKRIVERRISESAGAIN
+```
 
 Проверка первой буквы: `V - N = (21-13) mod 26 = 8 = I`… стоп, проверь
 свой результат: должно получиться осмысленное сообщение на английском.
@@ -39,11 +41,13 @@ PLAINTEXT: THEBLACKRIVERRISESAGAIN
 ```text
 cipher: XABYG, NRT GSEJZJ. RDLPIIYM EIQ JGWX.
 key:    DELTA
+```
 
 ### Выход
 
 ```text
 PLAINTEXT: CROW, THE SPREADS. TRACKING THE SIGN.
+```
 
 ## Подсказки
 

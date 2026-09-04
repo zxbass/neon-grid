@@ -20,6 +20,7 @@
 
 ```text
 LEADER ELECTED: node 3 (confirmed by 8/8)
+```
 
 ## Часть 2 — Двухфазный коммит
 
@@ -38,6 +39,7 @@ LEADER ELECTED: node 3 (confirmed by 8/8)
 ROUND 1: 9/10 YES -> COMMIT (started)
 ROUND 2: 7/10 YES -> ABORT
 ROUND 3: 10/10 YES -> COMMIT
+```
 
 ## Подсказки
 

@@ -30,6 +30,7 @@
 WIPED: 47 strings
 CARVER: JPEG @ 0x00000000 (still OK)
 CARVER: PNG  @ 0x00123ABC (still OK)
+```
 
 ## Часть 2 — Целостная ложь
 
@@ -47,6 +48,7 @@ CARVER: PNG  @ 0x00123ABC (still OK)
 ```text
 WEAKNESS: origin hash is unanchored -> anchor chain head to a signed timestamp
 HARDENED: chain head commits (term, server_uptime) via signed nonce
+```
 
 (текстовый ответ — но аргументированный, как в 116.)
 

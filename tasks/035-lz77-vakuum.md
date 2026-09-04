@@ -25,11 +25,13 @@ Vacuум LZ77 ищет совпадения в прошлом: «это уже �
 ```text
 flag=0x80 lit=0x41    -> 'A'
 flag=0x00 off=1 len=4 -> 'AAAA' (копия предыдущего 1 байт, 4 раза)
+```
 
 ### Выход
 
 ```text
 DECODED: AAAAA...
+```
 
 ## Часть 2 — Кодирование
 
@@ -40,6 +42,7 @@ DECODED: AAAAA...
 
 ```text
 ROUNDTRIP OK (input=1234 output=1234)
+```
 
 ## Подсказки
 

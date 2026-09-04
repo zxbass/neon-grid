@@ -19,12 +19,14 @@
 ```text
 work 100 500  -> OK in 100ms
 work 1000 500 -> TIMEOUT after 500ms
+```
 
 ### Выход
 
 ```text
 100 500  -> OK
 1000 500 -> TIMEOUT
+```
 
 ## Часть 2 — Факторный взлом
 
@@ -39,6 +41,7 @@ work 1000 500 -> TIMEOUT after 500ms
 ```text
 t=1 B=5000 valid=4242 -> UNLOCKED 4242 (перебрал 4243 за 4243ms)
 t=1 B=1000 valid=9999 -> BOOM (дошли до 999 при 1000ms)
+```
 
 ## Подсказки
 

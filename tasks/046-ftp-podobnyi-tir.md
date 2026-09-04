@@ -28,6 +28,7 @@ USER crow -> 200 OK
 LIST: boot.bin  512
       map.raw   4096
 GET boot.bin -> 512 bytes
+```
 
 ## Часть 2 — Секретный файл
 
@@ -43,6 +44,7 @@ USER crow -> 200 OK
 GET vault.key -> 403 FORBIDDEN
 USER agent.ops -> 200 OK
 GET vault.key -> 2048 bytes
+```
 
 ## Подсказки
 

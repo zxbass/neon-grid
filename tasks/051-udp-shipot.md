@@ -22,6 +22,7 @@ UDP-сервер на порту 1201: принимает дейтаграммы
 $ ./udp-echo 1201
 $ ./udp-ping 1201 "CROW HERE"
 CROW HERE
+```
 
 ## Часть 2 — Шифрованный шёпот
 
@@ -40,6 +41,7 @@ $ ./udp-secret 1201 "the grid is listening"
 ACK 0
 ACK 1
 ...
+```
 
 ## Подсказки
 

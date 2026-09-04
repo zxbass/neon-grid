@@ -23,11 +23,13 @@
 ```text
 key:      MERCURY
 cipher:   21 3b 4e 5a 6f ...
+```
 
 ### Выход
 
 ```text
 PLAINTEXT: <дешифрованный текст>
+```
 
 ## Часть 2 — Сброс потока
 
@@ -46,6 +48,7 @@ PLAINTEXT: <дешифрованный текст>
 FRAME 0: HELLO_MERCURY
 FRAME 1: AWAKE_AT_MIDNIGHT
 FRAME 2: GRID_IS_CLOSING
+```
 
 ## Подсказки
 

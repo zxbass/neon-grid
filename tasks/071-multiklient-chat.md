@@ -23,6 +23,7 @@
 
 ```text
 CONNECTIONS: 5  MESSAGES: 50  DELIVERED: 250
+```
 
 ## Часть 2 — Синхронная запись
 
@@ -34,6 +35,7 @@ CONNECTIONS: 5  MESSAGES: 50  DELIVERED: 250
 
 ```text
 LOG: 100 lines, first: [crow] ready
+```
 
 ## Подсказки
 

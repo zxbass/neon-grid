@@ -25,6 +25,7 @@ MZ-заголовок: `e_magic = "MZ"`, `e_lfanew` (u32 LE на смещени�
 
 ```text
 PE32 x86  sections=5  entry=0x401000  subsys=GUI
+```
 
 (optional header: `magic` 0x10B = PE32, `AddressOfEntryPoint` на 0x10,
 `Subsystem` на 0x68 — 2 = GUI, 3 = CUI.)
@@ -44,6 +45,7 @@ virtual address (u32), size raw (u32), offset raw (u32).
   pass_is_not_here
   OMEGA-DYNE
 FOUND: pw_let_the_raven_out
+```
 
 ## Подсказки
 

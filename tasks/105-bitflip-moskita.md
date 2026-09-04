@@ -16,6 +16,7 @@
 ```text
 LICENSE VALID
 LICENSE INVALID
+```
 
 Найди смещение строки `LICENSE INVALID` (печатный поиск) и выведи его,
 плюс первые 4 байта после неё в hex:
@@ -23,6 +24,7 @@ LICENSE INVALID
 ```text
 INVALID_STR @ 0x00001234
 AFTER: 74 05 90 90  (инструкция je/jz 05 ...)
+```
 
 ## Часть 2 — Патч
 
@@ -35,12 +37,14 @@ AFTER: 74 05 90 90  (инструкция je/jz 05 ...)
 
 ```text
 PATCHED @ 0x00001230: 74 -> EB
+```
 
 Также выведи контрольный SHA-256 до и после:
 
 ```text
 SHA256 ORIG: ...
 SHA256 PATCH: ...
+```
 
 ## Подсказки
 

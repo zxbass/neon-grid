@@ -22,6 +22,7 @@ def check(pw):
     for i, c in enumerate(pw):
         v = rotl32(v ^ (ord(c) << (i * 3)), 7)
     return v == 0xCAFEBABE
+```
 
 (rotl32 — поворот влево на 7, как в 009.)
 
@@ -30,6 +31,7 @@ def check(pw):
 
 ```text
 PASSWORD: x?y?z?  (посчитай)
+```
 
 ## Часть 2 — Формальная инверсия
 
@@ -48,6 +50,7 @@ PASSWORD: x?y?z?  (посчитай)
 ```text
 PASSWORD: R4V3N$G0
 CHECK: true
+```
 
 ## Подсказки
 

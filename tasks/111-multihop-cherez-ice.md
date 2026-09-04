@@ -19,6 +19,7 @@ NODE  NAME        TYPE   INPUTS
 1     LOBBY       udp    0
 2     VAULT       tcp    1
 3     CORE        icmp   2
+```
 
 Контур `TYPE` принимает пакеты только своего типа. Тип пакета можно
 сменить в контуре (поле `OUTPUT`). Найди путь из `GATE` (0) в `CORE`
@@ -26,6 +27,7 @@ NODE  NAME        TYPE   INPUTS
 
 ```text
 PATH: 0(tcp) -> 1(udp) -> 2(tcp) -> 3(icmp)
+```
 
 ## Часть 2 — Ловушки
 
@@ -39,6 +41,7 @@ PATH: 0(tcp) -> 1(udp) -> 2(tcp) -> 3(icmp)
 ```text
 PATH: 0 -> 1(ghost) -> 4 -> 3  (cost=4)
 ALTERNATIVE: 0 -> 2 -> 3 (cost=5)
+```
 
 ## Подсказки
 

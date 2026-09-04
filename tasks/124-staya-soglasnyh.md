@@ -19,6 +19,7 @@ VOTE   <term>
 LEADER <term>
 HEART  <term> <index>
 LOGOK  <term> <index>
+```
 
 Правила (упрощённый Raft):
 
@@ -36,6 +37,7 @@ LOGOK  <term> <index>
 ```text
 TERM 1: leader=node-2
 TERM 2: leader=node-1
+```
 
 (после убийства `node-2` лидером стал `node-1`.)
 
@@ -57,6 +59,7 @@ TERM 2: leader=node-1
 COMMIT k=v (3/3)
 COMMIT k2=v2 (2/3)   <- один фолловер лежит, но большинство есть
 CATCHUP node-3: +3 entries
+```
 
 ## Подсказки
 

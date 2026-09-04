@@ -30,6 +30,7 @@ LAYER 2: decrypted (len=512)
 LAYER 3: unpacked (password=GATEKEEPER)
 LAYER 4: crc OK
 LAYER 5: ACCESS GRANTED
+```
 
 ## Часть 2 — Открыть дверь
 
@@ -38,6 +39,7 @@ LAYER 5: ACCESS GRANTED
 ```text
 AUTH GATEKEEPER
 CODE <ключ из layer 5>
+```
 
 Если всё верно — отдаёт финальный текст. Собери клиент, который
 читает образ, выполняет все слои и открывает дверь:
@@ -46,6 +48,7 @@ CODE <ключ из layer 5>
 GATE OPEN: 
  "Ты стоял у чёрных врат, и они открылись.
   НЕОН ПОМНИТ ТЕБЯ."
+```
 
 ## Подсказки
 

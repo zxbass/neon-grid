@@ -15,11 +15,13 @@
 
 ```text
 HELLO <nonce(8 hex байт)>
+```
 
 МЕРКУРИЙ отвечает:
 
 ```text
 MERCURY <challenge(16 hex)> <tag(4 hex)>
+```
 
 где `tag = crc16(hex-строка challenge)` — первые 4 hex-символа CRC от
 challenge. Если `tag` не сошёлся — сервер молчит.
@@ -29,6 +31,7 @@ challenge. Если `tag` не сошёлся — сервер молчит.
 ```text
 CHALLENGE: 0e63b9c7a41f4d2d
 TAG:       a1f8
+```
 
 (подставь свои; главное — таг сходится с challenge.)
 
@@ -39,6 +42,7 @@ TAG:       a1f8
 
 ```text
 key[i+1] = crc16_ccitt(key[i] || reply_hex)
+```
 
 - `key[0] = 0x0E63` (первые 2 байта твоего challenge);
 - каждое твоё сообщение: `HELLO? <hex-строка, XOR key[i]>`;
@@ -55,6 +59,7 @@ YOU:  who am i?
 MERC: 0x74686F72356E1F -> "thorn"
 YOU:  hello thorn
 MERC: "welcome back, crow. the grid remembers."
+```
 
 ## Подсказки
 

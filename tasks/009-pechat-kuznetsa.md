@@ -30,6 +30,7 @@
 
 ```text
 SEAL: 0xXXXXXXXX
+```
 
 ## Часть 2 — Проверка партии
 
@@ -41,6 +42,7 @@ SEAL: 0xXXXXXXXX
 
 ```text
 SEAL BAD (expected 0xDEADBEEF, got 0x12345678)
+```
 
 ## Подсказки
 

@@ -27,6 +27,7 @@
 You are in the Neon Lounge.
 Exits: n s e
 Items: [keycard, ram]
+```
 
 ## Часть 2 — Сценарий
 
@@ -46,6 +47,7 @@ Items: [keycard, ram]
 ```text
 WIN: You jacked into the Black Gate terminal.
 Moves: 6  Items: keycard
+```
 
 ## Подсказки
 

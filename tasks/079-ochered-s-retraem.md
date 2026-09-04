@@ -22,6 +22,7 @@
 p=0.5 M=5 n=100
 DELIVERED: 87  DEAD: 13
 MAX_PAUSE_USED: 1600ms
+```
 
 ## Часть 2 — Очередь с приоритетом и тайм-аутом
 
@@ -34,6 +35,7 @@ MAX_PAUSE_USED: 1600ms
 
 ```text
 DELIVERED: 921  DEAD: 13  EXPIRED: 66
+```
 
 ## Подсказки
 

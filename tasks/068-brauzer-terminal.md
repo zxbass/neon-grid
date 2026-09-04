@@ -18,6 +18,7 @@
 ```text
 TITLE: OMEGA-DYNE // Corporate Hub
 BODY: Welcome, citizen. Trust us.
+```
 
 ## Часть 2 — Навигация
 
@@ -27,6 +28,7 @@ BODY: Welcome, citizen. Trust us.
 [0] /about   About us
 [1] /login   Employee login
 [2] /flag    Restricted
+```
 
 Команды: `<число>` — перейти, `back` — вернуться, `quit` — выход.
 Лимит переходов 20 (`TOO DEEP`).
@@ -40,6 +42,7 @@ BODY: Welcome, citizen. Trust us.
 > 2
 TITLE: FLAG PAGE
 BODY: FLAG{TUI_SURFING_IS_PURE}
+```
 
 ## Подсказки
 

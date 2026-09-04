@@ -17,6 +17,7 @@
 ```text
 > MERCURY: ENC:XOR,KEY=0x5A:1a 0b 0c...
 < CROW: HELLO
+```
 
 Сервер проверяет ответ (тайм-аут 10 с) и при ошибке сбрасывает
 сложность. Реализуй клиент с **переиспользованием** функций из
@@ -28,6 +29,7 @@
 ROUND 1/5 OK
 ...
 KEY: mercury_sees_all
+```
 
 ## Часть 2 — МЕРКУРИЙ-тест
 
@@ -41,12 +43,14 @@ KEY: mercury_sees_all
 ```text
 > MERCURY: 5f 5e 07 5f 5e 04 5d 5e 1f 5c 5e 03 04 5f 04 5d 5e 1f 5f 5e 05 04 5c 5e 1b 5f  (XOR/CAESAR/VIGENERE)
 < CROW: THE GRID NEVER SLEEPS TONIGHT
+```
 
 ### Выход
 
 ```text
 CIPHER GUESSED: XOR (key 0x4A)
 DIALOGUE COMPLETE: 5/5
+```
 
 ## Подсказки
 

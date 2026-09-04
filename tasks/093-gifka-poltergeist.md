@@ -22,6 +22,7 @@ GIF:
 
 ```text
 GIF89a 640x480 global_colors=256 bg=0
+```
 
 ## Часть 2 — Кадры и LZW
 
@@ -46,6 +47,7 @@ LZW-декодер с таблицей цветов: коды → индексы
 FRAME 0: 640x480 delay=10 local_pal=no
 ...
 KEY LAYER: 4e 45 4f 4e -> NEON
+```
 
 ## Подсказки
 

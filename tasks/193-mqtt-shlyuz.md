@@ -21,6 +21,7 @@ MQTT-шлюз в умном квартале: устройства шепчут�
 CONNECT: flags=0x02 client=zen-agent keepalive=60
 PUBLISH: topic=neon/alerts qos=0
 SUBSCRIBE: topic=neon/#
+```
 
 ## Часть 2
 

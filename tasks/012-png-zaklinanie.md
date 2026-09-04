@@ -28,6 +28,7 @@
 IHDR len=13 crc=OK
 IDAT len=65536 crc=OK
 IEND len=0   crc=OK
+```
 
 CRC считается как стандартный CRC-32 (полином `0xEDB88320`, та же
 таблица, что в zlib/png), по полю «тип» + «данные».
@@ -55,6 +56,7 @@ CRC считается как стандартный CRC-32 (полином `0xE
 ```text
 WIDTH=800 HEIGHT=600 DEPTH=8 COLOR=2 INTERLACE=0
 FIXED_CRC: 0x9F8E3D2A
+```
 
 ## Подсказки
 

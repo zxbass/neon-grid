@@ -22,6 +22,7 @@
 MSG 0: HEARTBEAT SYS=1
 MSG 1: ATTITUDE SYS=1
 MSG 2: GPS SYS=1
+```
 
 ## Часть 2
 

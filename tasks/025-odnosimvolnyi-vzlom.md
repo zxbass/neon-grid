@@ -21,6 +21,7 @@
 ```text
 KEY: 0x42
 TEXT: The contract is yours if you can reach the terminal at sector 7...
+```
 
 ## Часть 2 — Длинный ключ, известная длина
 
@@ -34,6 +35,7 @@ TEXT: The contract is yours if you can reach the terminal at sector 7...
 ```text
 KEY: MERCURY!
 TEXT: awake awake awake the meridian is shifting ...
+```
 
 ## Подсказки
 

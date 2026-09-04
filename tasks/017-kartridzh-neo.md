@@ -26,6 +26,7 @@
 
 ```text
 MAPPER=4 PRG=16KB*8 CHR=8KB*16 TRAINER=no BATTERY=yes REGION=NTSC
+```
 
 ## Часть 2 — Данные в CHR
 
@@ -48,6 +49,7 @@ BANK 3
 ..#.....
 #.#..#..
 ...
+```
 
 ## Подсказки
 

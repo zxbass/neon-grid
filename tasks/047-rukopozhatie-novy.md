@@ -22,11 +22,13 @@ Connection: Upgrade\r\n
 Sec-WebSocket-Key: <случайные 16 байт, base64>\r\n
 Sec-WebSocket-Version: 13\r\n
 \r\n
+```
 
 Сервер отвечает `101 Switching Protocols` и заголовком:
 
 ```text
 Sec-WebSocket-Accept: base64(SHA1(key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"))
+```
 
 Реализуй вычисление `Accept` и проверь по известному примеру
 (RFC 6455):
@@ -34,11 +36,13 @@ Sec-WebSocket-Accept: base64(SHA1(key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"))
 ```text
 key   = dGhlIHNhbXBsZSBub25jZQ==
 accept= s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+```
 
 ### Выход
 
 ```text
 ACCEPT MATCH: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+```
 
 ## Часть 2 — Фрейм данных
 
@@ -55,6 +59,7 @@ ACCEPT MATCH: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 
 ```text
 FRAME: MERCURY_IS_AWAKE
+```
 
 ## Подсказки
 

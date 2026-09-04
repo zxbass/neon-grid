@@ -19,6 +19,7 @@ WAV 16-бит, моно (формат из 013). Семплы — signed 16-bit 
 
 ```text
 PAYLOAD: DROP_AT_NEON_PIER
+```
 
 ## Часть 2 — Встраивание и устойчивость
 
@@ -30,6 +31,7 @@ PAYLOAD: DROP_AT_NEON_PIER
 ```text
 STEGO WROTE: 12345 bytes
 NOISE ERROR: 11.2% bits flipped -> still decodable: YES
+```
 
 (если ошибок много — примени исправление: большинство голосов по 3
 копиям.)

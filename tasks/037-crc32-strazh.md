@@ -22,6 +22,7 @@ for byte in data:
         if crc & 1: crc = (crc >> 1) ^ 0xEDB88320
         else: crc >>= 1
 return crc ^ 0xFFFFFFFF
+```
 
 Вычисли для строк `NEON` и `GRID`:
 
@@ -30,6 +31,7 @@ return crc ^ 0xFFFFFFFF
 ```text
 NEON: 0x???????? (посчитай сам — сверь с zlib.crc32)
 GRID: 0x???????? 
+```
 
 (проверка: `zlib.crc32(b"NEON")` — число 32-бит; выведи в hex.)
 
@@ -44,6 +46,7 @@ table[(crc ^ byte) & 0xFF]`. Дай замер: посчитай CRC файла 
 
 ```text
 TABLE_BASED: 4x FASTER
+```
 
 ## Подсказки
 

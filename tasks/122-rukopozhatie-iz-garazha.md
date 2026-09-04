@@ -26,6 +26,7 @@
 A: 8
 B: 19
 SHARED: 2
+```
 
 (проверь: `5^6 mod 23 = 8`, `5^15 mod 23 = 19`,
 `19^6 mod 23 = 2` и `8^15 mod 23 = 2` — совпало.)
@@ -36,6 +37,7 @@ SHARED: 2
 
 ```text
 nonce(u32 BE) | seq(u32 BE) | data | tag
+```
 
 где `tag = crc16_ccitt(S || nonce || seq || data)` (CRC-CCITT из 016),
 `S` — общий ключ из части 1 (1 байт, 0x02).
@@ -55,6 +57,7 @@ nonce(u32 BE) | seq(u32 BE) | data | tag
 ```text
 SEQ 5: ACK
 SEQ 5 (replay): REPLAY DROP
+```
 
 ## Подсказки
 

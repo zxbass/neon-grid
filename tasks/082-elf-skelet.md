@@ -31,6 +31,7 @@ ELF-заголовок (64-бит):
 
 ```text
 ELF64 LE  type=ET_DYN  machine=x86-64  entry=0x401000  shdr=13
+```
 
 ## Часть 2 — Секции
 
@@ -41,11 +42,13 @@ strtab) и выведи её содержимое как строки (печа�
 ```text
 SECTION .rodata (offset=0x2000 size=0x80)
 FLAG: crow_was_here_2049
+```
 
 Также найди `.text` и выведи entry-инструкцию (первые 8 байт в hex):
 
 ```text
 .text entry bytes: 48 8b 05 00 00 00 00 00
+```
 
 ## Подсказки
 

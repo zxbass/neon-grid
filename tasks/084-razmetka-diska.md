@@ -22,6 +22,7 @@
 ```text
 PT 0: type=0x0C (FAT32 LBA) start=2048 sectors=614400 size=300.0MB
 PT 1: type=0x83 (Linux)     start=616448 sectors=204800 size=100.0MB
+```
 
 ## Часть 2 — GPT и поиск
 
@@ -34,6 +35,7 @@ PT 1: type=0x83 (Linux)     start=616448 sectors=204800 size=100.0MB
 
 ```text
 PARTITION MERCURY: LBA 2048..4096 (1.0MB)
+```
 
 ## Подсказки
 

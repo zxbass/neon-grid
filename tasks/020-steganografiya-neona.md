@@ -26,6 +26,7 @@
 
 ```text
 PAYLOAD: MEET_AT_NEON_ALLEY_3AM
+```
 
 ## Часть 2 — Сокрытие
 
@@ -38,6 +39,7 @@ B,G,R каждого пикселя. Сохрани копию как `stego.bmp
 
 ```text
 WROTE stego.bmp (ok, 120x90)
+```
 
 ## Подсказки
 

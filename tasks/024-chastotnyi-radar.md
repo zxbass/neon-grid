@@ -18,6 +18,7 @@
 
 ```text
 MOST COMMON: E T A O I N S H R D L U C M F W Y P V B G K Q J X Z
+```
 
 (это эталонная частота английского; твоя выборка будет другой).
 
@@ -35,6 +36,7 @@ MOST COMMON: E T A O I N S H R D L U C M F W Y P V B G K Q J X Z
 
 ```text
 G TWTX UXW GJXVTK GN XTFRLGX ETUXK — RXATJ XTGH XJ VJXGHFT FWTX
+```
 
 (здесь частота позволяет угадать: `G`→`T`, `X`→`E`, `T`→`H`, `W`→`?`…
 реши сам.)
@@ -43,6 +45,7 @@ G TWTX UXW GJXVTK GN XTFRLGX ETUXK — RXATJ XTGH XJ VJXGHFT FWTX
 
 ```text
 DECRYPTED: THE NET HAS FALLEN AND WE KNOW ...
+```
 
 ## Подсказки
 

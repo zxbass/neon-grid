@@ -22,6 +22,7 @@ CATALOG: obj1
 PAGES: obj2 COUNT=1
 PAGE: obj3
 STREAM: obj4
+```
 
 ## Часть 2
 

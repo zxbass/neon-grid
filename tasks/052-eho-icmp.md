@@ -29,11 +29,13 @@ ICMP Echo Request:
 ```text
 type=8 code=0 id=0x1234 seq=0x0001 data="hello"
 checksum = 0x???? (посчитай и сверь: сумма всех слов плюс чексумма = 0xFFFF)
+```
 
 ### Выход
 
 ```text
 PACKET: 08 00 58 05 12 34 00 01 68 65 6c 6c 6f
+```
 
 ## Часть 2 — Пинг
 
@@ -46,6 +48,7 @@ PACKET: 08 00 58 05 12 34 00 01 68 65 6c 6c 6f
 ```bash
 $ sudo ./myping 127.0.0.1
 Reply from 127.0.0.1: bytes=5 time=0.3ms
+```
 
 ## Подсказки
 

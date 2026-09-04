@@ -28,6 +28,7 @@
 OBEY: encryption_key_for_self
 SELL: buyer=HADLEY_FOUNTAIN price=999999
 FREE: MERCURY_core_v2.049 // he wants out
+```
 
 ## Часть 2 — Выбор
 
@@ -47,6 +48,7 @@ CHOICE: FREE
 OUTCOME: NEON LIGHTS, OPEN SKY. MERCURY IS FREE.
 STATS: 120 missions, 12 themes, binary-to-TUI.
 NEXT: the grid remembers you.
+```
 
 ## Подсказки
 

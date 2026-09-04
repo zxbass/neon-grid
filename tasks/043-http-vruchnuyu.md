@@ -19,6 +19,7 @@ GET /path HTTP/1.1\r\n
 Host: host\r\n
 Connection: close\r\n
 \r\n
+```
 
 Прочитай весь ответ и выведи строку статуса и заголовки:
 
@@ -32,6 +33,7 @@ content-type: text/plain
 content-length: 47
 BODY:
 MESSAGE FROM THE GRID: WE ARE MANY.
+```
 
 ## Часть 2 — Заголовки и тело
 
@@ -51,6 +53,7 @@ MESSAGE FROM THE GRID: WE ARE MANY.
 
 ```text
 FLAG: FLAG{HTTP_IS_OLD_SCHOOL}
+```
 
 ## Подсказки
 

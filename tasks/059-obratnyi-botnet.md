@@ -24,6 +24,7 @@
 ```text
 WORKERS: 10  CHUNKS: 4096  HITS: 512
 ELAPSED: 1.234s  RATE: 13.6M keys/s
+```
 
 ## Часть 2 — Живучесть
 
@@ -38,6 +39,7 @@ ELAPSED: 1.234s  RATE: 13.6M keys/s
 
 ```text
 DONE: 512 hits  (124 chunks retried)
+```
 
 ## Подсказки
 
