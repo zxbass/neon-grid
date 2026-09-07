@@ -1,0 +1,14 @@
+VOTE 1 node-1 node-2
+VOTE 1 node-3 node-2
+LEADER 1 node-2
+HEART 1 node-2 idx=4
+LOGOK 1 node-1 idx=4
+LOGOK 1 node-3 idx=4
+COMMIT 1 k=v
+VOTE 2 node-2 node-1
+VOTE 2 node-3 node-1
+LEADER 2 node-1
+HEART 2 node-1 idx=7
+LOGOK 2 node-2 idx=7
+COMMIT 2 k2=v2
+CATCHUP 2 node-3 +3 entries

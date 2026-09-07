@@ -1,0 +1,9 @@
+CHALLENGE: 0e63b9c7a41f4d2d
+TAG: a4a9
+=== PART 2 ===
+YOU: who am i?
+MERC: "thorn"
+YOU: hello thorn
+MERC: "you made it through the grid"
+YOU: what now?
+MERC: "welcome back, crow. the grid remembers."

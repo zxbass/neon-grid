@@ -1,0 +1,6 @@
+YOU 79 0b 61 43 6f 0e 2e 0a 31
+MERC 7a 0b 61 11 60
+YOU 26 43 22 4a 21 06 3a 4e 21 54 20
+MERC 37 49 3b 06 23 47 2a 43 6e 4f 3a 06 3a 4e 3c 49 3b 41 26 06 3a 4e 2b 06 29 54 27 42
+YOU f5 40 e3 5c a2 46 ed 5f bd
+MERC f5 4d ee 4b ed 45 e7 08 e0 49 e1 43 ae 08 e1 5a ed 5f ac 08 f6 40 e7 08 e5 5a eb 4c a2 5a e7 45 e7 45 e0 4d f0 5b ac

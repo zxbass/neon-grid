@@ -1,0 +1,11 @@
+STAGE 1: OK (version=9)
+STAGE 2: OK (len=256)
+STAGE 3: OK (blocks=4)
+STAGE 4: OK (auth=NEON_RAVEN)
+STAGE 5: OK (magic=0x5A5A crc16=0x76AB)
+STAGE 6: OK (code_crc=0x987A)
+STAGE 7: CODE=704213 ACCESS GRANTED
+=== PART 2 ===
+DAMAGE: stage 3 block #2
+HEALED: using mirror copy (offset 0x16)
+RESULT: ACCESS GRANTED (self-healed 1/1)

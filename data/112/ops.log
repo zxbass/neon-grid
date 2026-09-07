@@ -1,0 +1,19 @@
+initial A=1000 B=0 C=0
+begin 1
+tx 1 transfer A B 100
+commit 1
+begin 2
+tx 2 transfer B C 50
+commit 2
+begin 3
+tx 3 transfer C A 25
+commit 3
+begin 4
+tx 4 transfer A B 10
+commit 4
+begin 5
+tx 5 transfer B A 5
+commit 5
+begin 6
+tx 6 transfer B C 3
+crash

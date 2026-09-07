@@ -1,0 +1,5 @@
+RACE DETECTED: total=1999 (expected 2000)
+=== PART 2 ===
+LOCK ORDER: ok (no deadlock)
+INVARIANT: total=1000 across 5 tx
+CRASH RECOVERY: restored to tx #5 (1 rolled back)

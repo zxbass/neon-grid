@@ -1,0 +1,3 @@
+ciphertext: 1e 02 0f 6a 0d 18 03 0e 6a 04 0f 1c 0f 18 6a 19 06 0f 0f 1a 19 6a 1e 05 04 03 0d 02 1e
+candidates: XOR CAESAR VIGENERE
+vigenere_key: OMEGA

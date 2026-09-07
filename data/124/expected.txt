@@ -1,0 +1,6 @@
+TERM 1: leader=node-2
+TERM 2: leader=node-1
+=== PART 2 ===
+COMMIT k=v (3/3)
+COMMIT k2=v2 (2/3)
+CATCHUP node-3 +3 entries

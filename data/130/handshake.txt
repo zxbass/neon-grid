@@ -1,0 +1,3 @@
+nonce=deadbeef00c0ffee
+challenge=0e63b9c7a41f4d2d
+tag=a4a9

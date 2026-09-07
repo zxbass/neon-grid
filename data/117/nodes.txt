@@ -1,0 +1,11 @@
+N=10
+node 1 alive
+node 3 dead
+node 5 alive
+node 7 alive
+node 9 dead
+node 11 alive
+node 13 alive
+node 15 dead
+node 17 alive
+node 19 alive

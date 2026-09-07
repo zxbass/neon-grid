@@ -1,0 +1,5 @@
+LEADER ELECTED: node 1 (confirmed by 7/10)
+=== PART 2 ===
+ROUND 1: 9/10 YES -> ABORT
+ROUND 2: 7/10 YES -> ABORT
+ROUND 3: 10/10 YES -> COMMIT (started)

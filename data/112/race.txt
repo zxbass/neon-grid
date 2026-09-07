@@ -1,0 +1,4 @@
+initial A=2000 B=0
+THREAD A: 1000 transfers A->B (no lock)
+THREAD B: 1000 transfers A->B (no lock)
+FINAL: A=0 B=1999 total=1999 (expected 2000)

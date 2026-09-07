@@ -1,0 +1,7 @@
+AUTH crow -> OK crow
+LOGIN crow -> DENY
+PING 1234 -> PONG 1234
+ECHO hello -> ?
+GET flag -> ERR_NEED_KEY
+TIME now -> ?
+HELP -> ?

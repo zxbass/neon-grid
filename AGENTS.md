@@ -24,9 +24,9 @@ go test ./solutions/<NNN-slug>/  # test one mission
   `part2`. `Part1()`/`Part2()` must return strings with NO trailing newline (test compare against
   trimmed values). Note: header in tests is `=== PART 2 ===` (uppercase), while `main()` prints
   `=== Part 2 ===` — only return values are tested, so main() format is irrelevant.
-- **50 missions have no data dirs**: 041–080 (all 40), plus 104, 109, 112, 114, 117, 118, 120, 124,
-  129, 130. Their tests panic in `kit.Expected` ("open data/041/expected.txt"), never reaching
-  `Part1`. To implement one of these, you must also create `data/NNN/expected.txt` manually.
+- **All 200 missions have data dirs now** (no more no-op tests). 041–080 + 104/109/112/114/117/118/
+  120/124/129/130 were converted to deterministic file-based missions (see "Missions 041-080" and
+  "Missions 104–117 conversions" / "Missions 118–130 finale" below).
 - **`expected.txt` is the source of truth for expected output.** Missions 131–200 (plus 101–103,
   105–108, 110) were built generator-first: the expected result defines the task file
   (`tasks/NNN-slug.md`), which spells out the exact algorithm the player must reproduce (tie-breaks,
@@ -55,10 +55,11 @@ go test ./solutions/<NNN-slug>/  # test one mission
 Full audit of missions 002–200 (5 parallel agents, Sep 2026) found task↔data inconsistencies.
 **Fix policy**: 001–040/081–100 are task-first → regenerate data/expected to match tasks;
 131–200 are generator-first (expected.txt is source of truth) → fix task text to match expected.
-101–110: regenerate data per task texts (user decision). Missions 041–080, 104, 109, 112, 114, 117,
-118, 120, 124, 129, 130 have NO data dirs (their tests are no-op stubs "TODO: implement test" —
-58 missions total have no-op tests). For 041–080 network missions use deterministic file-based
-data (user decision), update task "Вход" sections accordingly.
+101–110: regenerate data per task texts (user decision). Missions 118, 120, 124, 129, 130 have
+NO data dirs (their tests are no-op stubs "TODO: implement test"). 041–080 and 104/109/112/114/117
+were converted to deterministic file-based missions (see "Missions 041-080" and "Missions 104–117
+conversions" below); for 041–080 network missions use deterministic file-based data (user
+decision), update task "Вход" sections accordingly.
 
 ### 002–040 findings (fix task text; where noted fix data)
 
@@ -280,3 +281,49 @@ Conventions:
   W=2 round-robin (quantum 10, prio>=7 gets 2 quanta), 077 timeout pairs + PIN brute
   force budget, 078 ops.log apply + (seq,node) merge, 079 retry/backoff + prio/TTL
   queue (step 100ms), 080 access.log stats + suspicious filter.
+
+## Missions 104–117 conversions (DONE 2026-09-08)
+
+104/109/112/114/117 were originally live-network/concurrency exercises; converted to
+deterministic file-based missions (same conventions as 041–080). Generator:
+`cmd/gendata/gen_104_130.go`; all verified with an independent throwaway script.
+
+- 104: `protocol.txt` fuzz dictionary (CMD ARGS -> RESPONSE, `?` = dead); part1 =
+  `CMD: RESPONSE` for non-`?` lines (`%-5s` of `cmd + ":"`), part2 = handshake with
+  token = first 8 hex of sha256("OMEGA:crow") = `eb05911e` -> `FLAG{MUTE_PROTOCOL_BROKEN}`.
+- 109: `target.bin` IronCore program (2 jumps); part1 = 6-byte needle PUSH 0 + HLT at
+  offset 0, JMP/JZ in the shifted original get operand += 6 (JMP FIXED: 2 relocations);
+  part2 = trojan payload (PUSH c; STORE 0xFFFE screen) prints INFECTED, JMP to the
+  shifted original; emulation rules (absolute jump operands, x0 = 0) are spelled out in
+  the task. NOTE: brief said "4 bytes" but PUSH imm32 + HLT = 6 bytes — resolved as 6.
+- 112: `race.txt` recorded race (total=1999 < 2000) + `ops.log` journal (begin/tx/commit,
+  trailing `crash`); part1 = RACE DETECTED, part2 = apply with lock order A<B<C,
+  INVARIANT total=1000 across 5 tx, CRASH RECOVERY to tx #5 (1 rolled back).
+- 114: `frames.bin` = 5 data frames (0x01 + len u16 BE + data, 7 bytes each) + 0x02 end;
+  part1 = SENT/RECEIVED 5 blocks + MIRROR OK, part2 = reassembled payload
+  "HELLO GRID, TUNNEL ECHO 5 BLOCKS OK" + TUNNEL OVER HTTP: OK (5 frames).
+- 117: `nodes.txt` (N=10, alive/dead) + `rounds.txt` (3 rounds x/N yes); part1 = leader =
+  min alive id (node 1, 7/10), part2 = 2PC: COMMIT only when x == N, else ABORT.
+
+## Missions 118–130 finale conversions (DONE 2026-09-08)
+
+118/120/124/129/130 were originally interactive/dialog/concurrency exercises; converted to
+deterministic file-based missions (same conventions as 041–080). Generator:
+`cmd/gendata/gen_118_130.go`; all verified with an independent throwaway script.
+
+- 118: `riddles.txt` (5 cipher challenges XOR/CAESAR/VIGENERE) + `guess.txt`; part1 = decrypt each
+  -> ROUND i/5 OK + KEY: mercury_sees_all, part2 = pick the cipher (letter/space scoring) ->
+  CIPHER GUESSED: XOR (key 0x4A) + DIALOGUE COMPLETE: 5/5.
+- 120: `path_obey.dat`/`path_sell.dat`/`path_free.dat` (PATH magic + key byte + u32le len + XOR
+  payload) + `choice.txt`; part1 = decrypt the three -> OBEY:/SELL:/FREE: lines, part2 = choice
+  outcome + STATS + NEXT.
+- 124: `cluster.log` (term/leader/heartbeat/commit records); part1 = leader per term by majority ->
+  TERM N: leader=node-X, part2 = COMMIT k=v (k/3) + CATCHUP node-X: +N entries.
+- 129: `gate.bin` 7-stage pipeline (u32 version>=7, XOR 0x5A region, RLE blocks + CRC16, auth
+  NEON_RAVEN, magic 0x5A5A, code 704213) + `gate.damaged` + `gate.mirror`; part1 = STAGE N: OK ...
+  CODE=704213 ACCESS GRANTED, part2 = detect CRC-failed stage-3 block in gate.damaged, heal from
+  mirror at offset 0x16 -> RESULT: ACCESS GRANTED (self-healed 1/1).
+- 130: `handshake.txt` (challenge 0e63b9c7a41f4d2d) + `dialog.txt`; part1 = CHALLENGE + TAG
+  (crc16 of challenge hex-string bytes = a4a9), part2 = key-evolving XOR dialog
+  (key[0]=0x0E63, key[i+1]=crc16(key[i] || reply)) -> YOU:/MERC: exchange ending
+  "welcome back, crow. the grid remembers.".

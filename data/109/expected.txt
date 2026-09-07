@@ -1,0 +1,7 @@
+INJECTED 6 bytes @ 0x0000
+JMP FIXED: 2 relocations
+=== PART 2 ===
+RUN:
+INFECTED
+(оригинал продолжает работу)
+EXIT: 0
