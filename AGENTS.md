@@ -99,7 +99,8 @@ data (user decision), update task "Вход" sections accordingly.
   image.bmp (3946.81); task example -> `0 255 0 -> 2`.
 
 ### 081–100 findings
-- 081: FIXED (2026-09-07): task hint now says NUL-padded name, trim at first NUL; content trim noted.
+- 081: FIXED (2026-09-07): task hint now says NUL-padded name, trim at first NUL;
+  content trim noted.
 - 083: BLOCKER — data/083 has only expected.txt, `camera.exe` referenced by stub/comment missing
   everywhere. Mission unsolvable. FIX: generate PE file.
   FIXED (2026-09-07): `camera.exe` generated (PE32, 5 sections, entry 0x401000, subsys GUI, .rdata
@@ -108,7 +109,8 @@ data (user decision), update task "Вход" sections accordingly.
 - 084: NOT A BUG — partition array IS at LBA 2 (4 entries at LBA 2-5); MERCURY is entry index 2
   (LBA 4) and is findable per the task (type GUID left zero; backup GPT unused by the task).
 - 085: FIXED (2026-09-07): task example -> carved_0.jpg / carved_1.png / carved_2.zip.
-- 086: FIXED (2026-09-07): removed `SET d`/`DEL d` ops from WAL; now 10 ok + 1 corrupted, final a/b/c.
+- 086: FIXED (2026-09-07): removed `SET d`/`DEL d` ops from WAL; now 10 ok + 1
+  corrupted, final a/b/c.
 - 089: FIXED (2026-09-07): base fill 0xFF + `byte(j+1)` fill removes byte coincidences; computed
   TOTAL_BYTES = 2048 (was hardcoded 2048 but real diff gave 2047).
 - 093: NOT A BUG — GIF has 4 image blocks and expected lists FRAME 0/1/2/3 (audit saw stale data).
@@ -124,7 +126,8 @@ data (user decision), update task "Вход" sections accordingly.
   INC r/DEC r/HLT/RET); task defined 0x01=2B, 0x03=4B. Regenerated.
 - 103: old XOR data (stored.txt/check.txt) dropped; pure rotl32 crackme -> PASSWORD: 390M38aZ
   (MITM split 4+4, verified v8=0xCAFEBABE). Regenerated.
-- 105: bad.bin -> license.bin (LICENSE VALID/INVALID, je at 0x80, 74->EB patch, SHA-256). Regenerated.
+- 105: bad.bin -> license.bin (LICENSE VALID/INVALID, je at 0x80, 74->EB patch,
+  SHA-256). Regenerated.
 - 106: symtab.txt -> real ELF64 elf.bin (.symtab init/validate_key/decrypt + .text call rel32,
   call graph in expected); task gained a "Данные" section. Regenerated.
 - 107: bytecode.bin -> vm.bin (IronCore 15-opcode table); x1 = 2*x0 + 3, RESULT(5)=13; task part2
@@ -157,7 +160,8 @@ data (user decision), update task "Вход" sections accordingly.
 - 123 (minor): task says `dial.bin`, data has `dial.wav`; task says "synthesize" but audio provided.
 
 ### 141–170 findings
-- 166: task says A* (shortest path) but expected is a 95-step DFS snake (empty 8×12, S=(0,0), E=(7,0),
+- 166: task says A* (shortest path) but expected is a 95-step DFS snake
+  (empty 8×12, S=(0,0), E=(7,0),
   shortest is 7). FIX: task → DFS description or data → true A* path.
   FIXED (2026-09-07, user decision): regenerated under real A* — new 7×12 maze map with walls
   (unique 35-step shortest path), expected.txt = LEN 35 + PATH, task rewritten (A*: f=g+h
