@@ -24,7 +24,7 @@ go test ./solutions/<NNN-slug>/  # test one mission
   `part2`. `Part1()`/`Part2()` must return strings with NO trailing newline (test compare against
   trimmed values). Note: header in tests is `=== PART 2 ===` (uppercase), while `main()` prints
   `=== Part 2 ===` — only return values are tested, so main() format is irrelevant.
-- **All 200 missions have data dirs now** (no more no-op tests). 041–080 + 104/109/112/114/117/118/
+- **All 210 missions (001–210) have data dirs now** (no more no-op tests). 041–080 + 104/109/112/114/117/118/
   120/124/129/130 were converted to deterministic file-based missions (see "Missions 041-080" and
   "Missions 104–117 conversions" / "Missions 118–130 finale" below).
 - **`expected.txt` is the source of truth for expected output.** Missions 131–200 (plus 101–103,
