@@ -55,11 +55,10 @@ go test ./solutions/<NNN-slug>/  # test one mission
 Full audit of missions 002–200 (5 parallel agents, Sep 2026) found task↔data inconsistencies.
 **Fix policy**: 001–040/081–100 are task-first → regenerate data/expected to match tasks;
 131–200 are generator-first (expected.txt is source of truth) → fix task text to match expected.
-101–110: regenerate data per task texts (user decision). Missions 118, 120, 124, 129, 130 have
-NO data dirs (their tests are no-op stubs "TODO: implement test"). 041–080 and 104/109/112/114/117
-were converted to deterministic file-based missions (see "Missions 041-080" and "Missions 104–117
-conversions" below); for 041–080 network missions use deterministic file-based data (user
-decision), update task "Вход" sections accordingly.
+101–110: regenerate data per task texts (user decision). 041–080 and 104/109/112/114/117/118/120/
+124/129/130 were converted to deterministic file-based missions (see "Missions 041-080",
+"Missions 104–117 conversions" and "Missions 118–130 finale" below); for 041–080 network missions
+use deterministic file-based data (user decision), update task "Вход" sections accordingly.
 
 ### 002–040 findings (fix task text; where noted fix data)
 
