@@ -61,8 +61,10 @@ Full audit of missions 002–200 (5 parallel agents, Sep 2026) found task↔data
 data (user decision), update task "Вход" sections accordingly.
 
 ### 002–040 findings (fix task text; where noted fix data)
-- 002: input.txt 1st byte `AA` but expected computed from `6A`; part2 example `64 1 0 -> 0xC0`
-  contradicts own rule (64 > 63 → SIZE_OVERFLOW). FIX: input → `6A`, example → e.g. `63 1 1 -> 0xFF`.
+- 002: part2 example `64 1 0 -> 0xC0` contradicts own rule (64 > 63 → SIZE_OVERFLOW).
+  FIXED (2026-09-07): data part2 → `63 1 1`, expected → `0xFF`, task example → `63 1 1 -> 0xFF`.
+  Part1 example byte was `0x6A` with wrong bit math (0x6A has bit6 set → FAST=yes); input `AA`
+  and expected were already consistent, so the task example was fixed to `0xAA`.
 - 003: example shows 2 spaces before `|` in ASCII column, expected has 1; part2 example line
   `00000810  2a 47...` doesn't match real disk.img bytes.
 - 004: example `value=1 BE=0x01000000` contradicts data (BE=0x00000001 for `01 00 00 00`);
@@ -103,6 +105,9 @@ data (user decision), update task "Вход" sections accordingly.
   to 512, expected trims NULs (task doesn't say).
 - 083: BLOCKER — data/083 has only expected.txt, `camera.exe` referenced by stub/comment missing
   everywhere. Mission unsolvable. FIX: generate PE file.
+  FIXED (2026-09-07): `camera.exe` generated (PE32, 5 sections, entry 0x401000, subsys GUI, .rdata
+  strings pw_let_the_raven_out/pass_is_not_here/OMEGA-DYNE — matches expected.txt), un-ignored in
+  `.gitignore` (`!data/083/camera.exe`) and committed.
 - 084: GPT header says partition-array LBA 2 (empty), real MERCURY entry at LBA 4; backup GPT at
   LBA 4096 empty. FIX data or task.
 - 085: part2 example `carved_0.png/carved_1.jpg` swapped vs part1 order & expected (`carved_0.jpg...`).
@@ -127,12 +132,19 @@ data (user decision), update task "Вход" sections accordingly.
 ### 141–170 findings
 - 166: task says A* (shortest path) but expected is a 95-step DFS snake (empty 8×12, S=(0,0), E=(7,0),
   shortest is 7). FIX: task → DFS description or data → true A* path.
+  FIXED (2026-09-07, user decision): regenerated under real A* — new 7×12 maze map with walls
+  (unique 35-step shortest path), expected.txt = LEN 35 + PATH, task rewritten (A*: f=g+h
+  Manhattan, tie-breaks min f → min g → insertion order, neighbors R/L/U/D). Reference: sol/grid.go
+  (AStar).
 - 150 (minor): README stream 32nd byte is `\n`; expected CONTENT: omits it (player must trim).
 - 152 (minor): synthetic ELF section-header metadata non-standard (shstrtab offset/name idx).
 
 ### 171–200 findings
 - 172: BLOCKER — `data/172/pieces.txt` referenced by task missing (dir has only expected.txt).
   FIX: generate pieces.txt.
+  FIXED (2026-09-07): pieces.txt = `I O T S Z J L I` (recovered from generator in
+  cmd/gendata/gen_171_180.go gen172); task rewritten with full sim rules (shapes as rows of
+  columns, spawn x=3, fall until blocked, full-row clearing). Reference: sol/grid.go (TetrisBoard).
 - 177: task "(0=пробел, 1=точка, 2=o, 3=#)" wrong — actual mapping 0→`.` 1→`o` 2→`#` 3→`@`
   (expected renders .,o,#). FIX task.
 - 181: task says ARP is "второй кадр"; it's FRAME 0 (first). FIX task.
@@ -149,13 +161,13 @@ data (user decision), update task "Вход" sections accordingly.
 - 188 (minor): response.txt Content-Length: 13 but body `NEON ONLINE!` = 12 bytes.
 
 ### Todo order (for next session)
-1. 002 quick fix (input + task example)
+1. 002 quick fix (input + task example) — DONE (2026-09-07): part2 `63 1 1 -> 0xFF`, example 0xAA
 2. Regenerate 101–110 (8 missions: blob.bin/UTF-16/enc:, disassembler, crackme rotr32, license
    patch, ELF symtab, 15-opcode VM, JS deobf, PKUP) + fix ambiguous task texts (102: instruction
    lengths contradict "1–3 байта"; define 0x01=2B, 0x03=4B)
-3. 083 camera.exe + 172 pieces.txt generators
+3. 083 camera.exe + 172 pieces.txt generators — DONE (2026-09-07), both committed
 4. 134/137/140 data fixes (SEND 999 IV, standard MT19937, RC4 C2)
-5. 166: DFS vs A* decision
+5. 166: DFS vs A* decision — DONE (2026-09-07): regenerated under real A* (unique 35-step path)
 6. 171–200: 177/181 (task), 182/183/186/199 (data), 185/188 (task notes)
 7. 002–040 + 081–100 task-text fixes
 8. Final: build/vet/sol green, markdownlint clean, re-audit

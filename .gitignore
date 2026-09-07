@@ -10,6 +10,7 @@ gendata
 *.dylib
 *.test
 *.out
+!data/083/camera.exe
 /bin/
 dist/
 

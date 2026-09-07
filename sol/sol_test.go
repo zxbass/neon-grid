@@ -640,3 +640,55 @@ func TestMission210PerfBlocks(t *testing.T) {
 		t.Fatalf("parts: got %q want %q / %q", g, w1, w2)
 	}
 }
+
+// ---------------------------------------------------------------- 166
+
+func TestMission166AStar(t *testing.T) {
+	grid := []string{
+		"S...........",
+		"###########.",
+		"#...........",
+		"#.##########",
+		"..........##",
+		"#########...",
+		".........E..",
+	}
+	path := AStar(grid, [2]int{0, 0}, [2]int{6, 9})
+	if len(path) != 35 || path != "RRRRRRRRRRRDDLLLLLLLLLLDDRRRRRRRRDD" {
+		t.Fatalf("AStar: got %q (len %d), want 35-step RRRRRRRRRRRDDLLLLLLLLLLDDRRRRRRRRDD", path, len(path))
+	}
+}
+
+// ---------------------------------------------------------------- 172
+
+func TestMission172Tetris(t *testing.T) {
+	shapes := map[byte][][]int{
+		'I': {{0, 1, 2, 3}},
+		'O': {{0, 1}, {0, 1}},
+		'T': {{0, 1, 2}, {1}},
+		'S': {{1, 2}, {0, 1}},
+		'Z': {{0, 1}, {1, 2}},
+		'J': {{0}, {0, 1, 2}},
+		'L': {{2}, {0, 1, 2}},
+	}
+	field, lines := TetrisBoard("IOTSZJLI", shapes)
+	want := []string{
+		"...IIII...",
+		"...LLL....",
+		"....T.....",
+		"...OO.....",
+		"...OO.....",
+		"...IIII...",
+	}
+	if len(field) != len(want) {
+		t.Fatalf("Tetris: got %d rows, want 6", len(field))
+	}
+	for i := range want {
+		if field[i] != want[i] {
+			t.Fatalf("Tetris row %d: got %q want %q", i, field[i], want[i])
+		}
+	}
+	if lines != 0 {
+		t.Fatalf("Tetris: got %d cleared lines, want 0", lines)
+	}
+}
