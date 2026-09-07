@@ -19,5 +19,5 @@
 
 ## Часть 2
 
-Разбери ARP (второй кадр — его payload): htype(2) ptype(2) hlen(1) plen(1) op(2) sha(6) spa(4) ...
+Разбери ARP (первый кадр — его payload): htype(2) ptype(2) hlen(1) plen(1) op(2) sha(6) spa(4) ...
 Верни `ARP: WHO-HAS? SENDER IP=<a.b.c.d> SENDER MAC=<...>`.

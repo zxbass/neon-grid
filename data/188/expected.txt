@@ -1,4 +1,4 @@
 METHOD: GET PATH: /index.html HOST: neon.grid
 === PART 2 ===
-CODE: 200 LENGTH: 13
+CODE: 200 LENGTH: 12
 BODY: NEON ONLINE!

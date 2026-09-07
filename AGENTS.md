@@ -142,7 +142,8 @@ data (user decision), update task "Вход" sections accordingly.
 - 134: newIV in expected part1 decrypts to `SEND 988 TO CROW!!`, task/part2 say `SEND 999`
   (positions 5-7 need 0x08,0x09,0x09 → IV `41414141414948484141414141414141`). FIX expected part1.
   FIXED (2026-09-07): regenerated — original plaintext `SEND 111 TO CROW!!`, flip bit 0x08 at IV
-  positions 5-7 -> `SEND 999 TO CROW!!` (IV `41414141414949494141414141414141`); verified with AES-CBC.
+  positions 5-7 -> `SEND 999 TO CROW!!` (IV `41414141414949494141414141414141`);
+  verified with AES-CBC.
 - 137: expected MT19937(1337) outputs 2–5 and UNTEMPER(1194544295)=1906655706 are NOT standard
   MT19937 (true: 1125387415 805945116 1523252379 218542195 1162831672; untemper=4037876808).
   Generator's MT is buggy/non-standard. FIX data/expected.
@@ -175,18 +176,29 @@ data (user decision), update task "Вход" sections accordingly.
   columns, spawn x=3, fall until blocked, full-row clearing). Reference: sol/grid.go (TetrisBoard).
 - 177: task "(0=пробел, 1=точка, 2=o, 3=#)" wrong — actual mapping 0→`.` 1→`o` 2→`#` 3→`@`
   (expected renders .,o,#). FIX task.
+  FIXED (2026-09-07): task parenthetical corrected to (0=`.`, 1=`o`, 2=`#`, 3=`@`).
 - 181: task says ARP is "второй кадр"; it's FRAME 0 (first). FIX task.
+  FIXED (2026-09-07): task now says "первый кадр".
 - 182: expected SPOOFED_REPLY has ARP target MAC `00:22:33:44:55:66` — appears nowhere in task/data
   (victim is 00:11:22:33:44:55); hex internally inconsistent (eth dst ≠ tha). FIX expected.
+  FIXED (2026-09-07): gen182 target = victim MAC; SPOOFED_REPLY now has tha = 00:11:22:33:44:55.
 - 183: fragments.txt ID bytes `37 13` (=0x3713 BE), length fields byte-swapped; expected/task say
   ID=0x1337, LEN=16/16/22. FIX data (use BE consistently).
+  FIXED (2026-09-07): gen183 writes ID 0x1337 and total length big-endian (network order).
 - 186: capture.pcap non-standard — standard parse yields 4 records (incl 0-len, t=20.000020...),
   not PACKETS:3/LEN=20/65/69/T=1.00; STREAM omits server response; part2 ends `\r\n\r\n` so
   kit trims to dangling `\r`. FIX data + task.
+  FIXED (2026-09-07): gen186 pcap fixed (ver 2.4, snaplen 65535, linktype 1, 3 records);
+  STREAM = full TCP stream both directions (ends with HELLO GRID, no dangling CR); task updated;
+  response Content-Length 11->10.
 - 199: tag.bin MSB-first 40-bit payload = 0x591E6A2C48; expected ID 0x123456789A = bit-reversed;
   task doesn't state bit order. FIX task (bit order) or data.
+  FIXED (2026-09-07): task states EM4100 LSB-first bit order (reverse 40 bits to get ID);
+  HID redefined as decimal of ID = 78187493530 (old "0001234567" was underivable).
 - 185 (minor): task says packet.txt checksum field = 0, file already contains C4 C8.
+  FIXED (2026-09-07): task note corrected ("пересчитай и сверь").
 - 188 (minor): response.txt Content-Length: 13 but body `NEON ONLINE!` = 12 bytes.
+  FIXED (2026-09-07): Content-Length 13->12, expected LENGTH: 12.
 
 ### Todo order (for next session)
 1. 002 quick fix (input + task example) — DONE (2026-09-07): part2 `63 1 1 -> 0xFF`, example 0xAA
@@ -201,5 +213,6 @@ data (user decision), update task "Вход" sections accordingly.
    shared 22-byte RC4 keystream (P2 decrypts)
 5. 166: DFS vs A* decision — DONE (2026-09-07): regenerated under real A* (unique 35-step path)
 6. 171–200: 177/181 (task), 182/183/186/199 (data), 185/188 (task notes)
+   — DONE (2026-09-07): 177/181/185 task text, 182/183/186/188/199 data+generators (see findings)
 7. 002–040 + 081–100 task-text fixes
 8. Final: build/vet/sol green, markdownlint clean, re-audit

@@ -6,3 +6,7 @@ PKT 2: T=1.00 LEN=69
 STREAM: GET /index.html HTTP/1.1
 Host: neon.grid
 
+HTTP/1.1 200 OK
+Content-Length: 10
+
+HELLO GRID

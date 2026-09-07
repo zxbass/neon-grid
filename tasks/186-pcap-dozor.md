@@ -19,5 +19,8 @@ PCAP-дамп с района: весь трафик, застывший во в
 
 ## Часть 2
 
-Собери TCP-поток (пакеты с данными в порядке следования): верни
-`STREAM: GET /index.html HTTP/1.1\r\nHost: neon.grid\r\n\r\n` (с CRLF).
+Собери TCP-поток: конкатенируй данные всех пакетов с payload в порядке
+следования (клиент → сервер и сервер → клиент). Верни
+`STREAM: GET /index.html HTTP/1.1\r\nHost: neon.grid\r\n\r\n`
++ `HTTP/1.1 200 OK\r\nContent-Length: 10\r\n\r\nHELLO GRID`
+(с CRLF).
