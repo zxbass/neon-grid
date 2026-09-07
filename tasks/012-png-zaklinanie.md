@@ -54,6 +54,7 @@ CRC считается как стандартный CRC-32 (полином `0xE
 ### Выход
 
 ```text
+IHDR CORRUPT
 WIDTH=800 HEIGHT=600 DEPTH=8 COLOR=2 INTERLACE=0
 FIXED_CRC: 0x9F8E3D2A
 ```

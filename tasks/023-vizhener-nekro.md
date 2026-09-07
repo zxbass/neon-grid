@@ -19,7 +19,7 @@
 Вход — шифротекст и ключ (заглавные, без пробелов):
 
 ```text
-cipher: VFHFVXRQLYIKTMAZIQBVCUIRB
+cipher: GLSOYEQXEMJREVWFRWOTNMB
 key:    NEON
 ```
 
@@ -29,7 +29,7 @@ key:    NEON
 PLAINTEXT: THEBLACKRIVERRISESAGAIN
 ```
 
-Проверка первой буквы: `V - N = (21-13) mod 26 = 8 = I`… стоп, проверь
+Проверка первой буквы: `G - N = (6-13) mod 26 = 19 = T`. Проверь
 свой результат: должно получиться осмысленное сообщение на английском.
 
 ## Часть 2 — Ключ без пробелов
@@ -39,7 +39,7 @@ PLAINTEXT: THEBLACKRIVERRISESAGAIN
 двигается только по буквам. Восстанови исходный текст с пунктуацией.
 
 ```text
-cipher: XABYG, NRT GSEJZJ. RDLPIIYM EIQ JGWX.
+cipher: FVZP, TKI DIRHEOL. TUENDIQK EAE VMRG.
 key:    DELTA
 ```
 

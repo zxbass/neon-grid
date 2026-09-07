@@ -32,11 +32,12 @@ AUDIO.CHUNK    size=88000 crc=0xDEADBEEF
 ## Часть 2 — Распаковка + проверка
 
 Распакуй каждый файл в отдельный файл с его именем. После распаковки
-проверь CRC32 каждого распакованного содержимого и выведи:
+проверь CRC32 каждого распакованного содержимого и выведи (имя в поле
+14 символов):
 
 ```text
-FLIGHT01.LOG: EXTRACTED (CRC OK)
-AUDIO.CHUNK:  EXTRACTED (CRC MISMATCH)
+FLIGHT01.LOG   EXTRACTED (CRC OK)
+AUDIO.CHUNK    EXTRACTED (CRC MISMATCH)
 ```
 
 Для файла с битым CRC выведи также ожидаемый и фактический CRC.
@@ -44,8 +45,8 @@ AUDIO.CHUNK:  EXTRACTED (CRC MISMATCH)
 ### Пример
 
 ```text
-FLIGHT01.LOG: EXTRACTED (CRC OK)
-AUDIO.CHUNK:  EXTRACTED (CRC MISMATCH expected=0xDEADBEEF got=0x00112233)
+FLIGHT01.LOG   EXTRACTED (CRC OK)
+AUDIO.CHUNK    EXTRACTED (CRC MISMATCH expected=0xDEADBEEF got=0x00112233)
 ```
 
 ## Подсказки

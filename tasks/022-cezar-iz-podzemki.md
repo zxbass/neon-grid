@@ -17,14 +17,14 @@
 Вход: строка и сдвиг `n`.
 
 ```text
-cipher: YNJY RGQJ YMJ YSTJXJINQD
+cipher: XMZY ITBS YMJ SJTSJSYNYD
 n: 5
 ```
 
 ### Выход
 
 ```text
-PLAINTEXT: SHUT DOWN THE NEONESINITY
+PLAINTEXT: SHUT DOWN THE NEONENTITY
 ```
 
 Проверка: `Y - 5 = T`, `N - 5 = I`, `J - 5 = E`…

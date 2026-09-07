@@ -65,40 +65,38 @@ data (user decision), update task "Вход" sections accordingly.
   FIXED (2026-09-07): data part2 → `63 1 1`, expected → `0xFF`, task example → `63 1 1 -> 0xFF`.
   Part1 example byte was `0x6A` with wrong bit math (0x6A has bit6 set → FAST=yes); input `AA`
   and expected were already consistent, so the task example was fixed to `0xAA`.
-- 003: example shows 2 spaces before `|` in ASCII column, expected has 1; part2 example line
-  `00000810  2a 47...` doesn't match real disk.img bytes.
-- 004: example `value=1 BE=0x01000000` contradicts data (BE=0x00000001 for `01 00 00 00`);
-  alignment `value=65   BE` (3sp) vs expected (4sp); part2 arrows show un-reversed strings
-  (`0x47454d4f -> OMEG` should be GEMO per own rule).
-- 006: example lists addr `00000020`, input.txt has `00000040`; self-refuting "TRACE SCAN" example.
-- 007: padding example `nick=CROW      lvl=7` (6sp) vs expected (5sp).
-- 008: part-1 example input `000020B3 00005000 0000FFFF` cannot decode to shown dates
-  (own check false); real input verified vs expected incl. DIFF=2209075198.
-- 009: worked example rotl5(0x5A5A5A5A) claimed `0xB4B4B4B5`, correct `0x4B4B4B4B`;
-  task never names input files (cargo.bin/batch.bin).
-- 010: rule "байты 4–7 и 12–15 отделены двумя пробелами" contradicts own example (2sp only after byte 7).
-- 011: expected ASCII-art NOT derivable from image.bmp (max luminance ~145, chars need ~180+).
-  FIX data (regenerate image to match expected) or task.
-- 012: task "Выход" omits `IHDR CORRUPT` line (prose + expected have it).
-- 013: zero-crossing hint (freq ≈ crossings/sec/2) cannot yield DTMF tones (1075–1300 vs 1906–2329 Hz).
-- 014: part2 example `FLIGHT01.LOG: EXTRACTED` vs expected `FLIGHT01.LOG   EXTRACTED` (padded 15, no colon).
-- 016: task says term.bin "64 КБ", actual file 768 bytes (3 blocks).
-- 017: table says byte6 bit4 = trainer, hint says bit2; header 0x24 (bit2 set) — expected TRAINER=no
-  matches table; fix hint.
-- 018: part2 BG counts order `0:1891 7:9 1:100` violates own rule "убывание частоты" → `0:1891 1:100 7:9`.
-- 020: task says bits R,G,B; data/expected require B,G,R (hint B=0,G=1,R=2 is right).
-- 021: example cipher `1b 0d 0b...` K=0x55 does NOT decrypt to NEONGRID_V1; input.txt verified.
-- 022: example `YNJY RGQJ...` n=5 does NOT decode to shown text; input.txt verified.
-- 023: example cipher+key NEON decrypts to garbage, own check "V−N = 8 = I" contradicts claim.
-- 027: example `NEXT:` uppercase, expected lowercase; task says "3 байта" but emitted.txt has 9.
-- 030: expected prints non-printable m=7 as `m=7 -> '^G'`, contradicts rule "только число".
-- 032: part2 expected also prints `PACKED:` line; part1 DATA example lowercase vs expected uppercase.
-- 033: archive.bin has undocumented 4-byte field (0x0000002A) before bitstream; task says bitstream
-  follows table directly.
-- 037: part2 example `TABLE_BASED: 4x FASTER` vs expected `TABLE CRC: .../BITWISE MATCH: OK/CORRUPTED CRC: ...`;
-  task says 10 MB file, actual 64 KB.
-- 039: expected not reproducible from image.bmp (MSE 8433 vs task algorithm 5649); example
-  `0 128 0 -> 2` contradicts algorithm (it's palette entry 10; expected.txt itself says 10).
+- 003: FIXED (2026-09-07): task examples corrected — 1 space before `|`, 0x810 line now shows
+  real bytes `2a 47 52 49 44 2a 41 4c 4c 4f 59 00 00 00 00 00 |*GRID*ALLOY.....|`.
+- 004: FIXED (2026-09-07): task examples corrected — BE=0x00000001, %-5d alignment, arrows
+  `0x47454D4F -> GEMO` / `0x41445243 -> ADRC`.
+- 006: FIXED (2026-09-07): task input -> `00000013 00000202 00000040`, example block rewritten
+  (READ WRITE INJECT / WRITE bit9(reserved) / SCAN).
+- 007: FIXED (2026-09-07): task example padding `CROW     lvl` (5sp, %-8s + space).
+- 008: FIXED (2026-09-07): task inputs/examples -> real `00210000 00220040 EF9FBF7D` and
+  `00210000 00220040 8B9FBF7D`; check math now matches.
+- 009: FIXED (2026-09-07): worked example -> rotl5 = 0x4B4B4B4B; task names cargo.bin/batch.bin.
+- 010: FIXED (2026-09-07): task rule -> "группы по 4, между группами один пробел".
+- 011: NOT A BUG — expected art IS derivable from image.bmp (bottom-up render matches; the
+  audit's brightness interpretation was wrong). No change.
+- 012: FIXED (2026-09-07): task "Выход" example starts with `IHDR CORRUPT`.
+- 013: FIXED (2026-09-07): task DTMF method -> power per table frequency (FFT/Goertzel), two
+  strongest tones; zero-crossing hint removed.
+- 014: FIXED (2026-09-07): task examples use %-14s padded names, no colon.
+- 016: FIXED (2026-09-07): task -> 768 байт (3 блока по 256).
+- 017: FIXED (2026-09-07): hint -> бит 4 байта 6.
+- 018: FIXED (2026-09-07): gen018 order -> {0,1,7}, expected `0:1891 1:100 7:9`.
+- 020: FIXED (2026-09-07): task part1 -> B,G,R order.
+- 021: FIXED (2026-09-07): task examples -> real ciphertexts (part1 `1b 10 1a...`, part2 CROW).
+- 022: FIXED (2026-09-07): task example -> `XMZY ITBS YMJ SJTSJSYNYD` -> SHUT DOWN THE NEONENTITY.
+- 023: FIXED (2026-09-07): task examples -> real `GLSOYEQXEMJREVWFRWOTNMB` / `FVZP, TKI DIRHEOL...`.
+- 027: FIXED (2026-09-07): task -> 9 emitted bytes, example `NEXT: c8 e4 72 39 1c` (lowercase).
+- 030: FIXED (2026-09-07): gen030 prints only `m=7` for non-printable; task example c=50, d=113.
+- 032: FIXED (2026-09-07): task part2 mentions PACKED line; DATA example uppercase.
+- 033: FIXED (2026-09-07): task documents the u32 BE message-length field before the bitstream.
+- 037: FIXED (2026-09-07): task part2 rewritten to match expected (blob.bin 64 KB, TABLE CRC /
+  BITWISE MATCH / CORRUPTED CRC).
+- 039: FIXED (2026-09-07): gen039 pixel formula rescaled (components <= 255), MSE now matches
+  image.bmp (3946.81); task example -> `0 255 0 -> 2`.
 
 ### 081–100 findings
 - 081: hint says space-padded filename, file is NUL-padded (`SECRET\x00\x00TXT`); content NUL-padded
@@ -215,4 +213,6 @@ data (user decision), update task "Вход" sections accordingly.
 6. 171–200: 177/181 (task), 182/183/186/199 (data), 185/188 (task notes)
    — DONE (2026-09-07): 177/181/185 task text, 182/183/186/188/199 data+generators (see findings)
 7. 002–040 + 081–100 task-text fixes
+   — 002–040 DONE (2026-09-07): 003/004/006/007/008/009/010/012/013/014/016/017/018/020/021/022/023/
+   027/030/032/033/037/039 fixed (see findings); 011 confirmed NOT A BUG
 8. Final: build/vet/sol green, markdownlint clean, re-audit
