@@ -1,0 +1,8 @@
+SEQ 0 ACK
+SEQ 1 NAK
+SEQ 1 ACK (retry 2)
+SEQ 2 ACK
+DONE: 24 bytes
+=== PART 2 ===
+WINDOW=1 retries=2
+WINDOW=4 retries=1

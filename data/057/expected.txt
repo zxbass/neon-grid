@@ -1,0 +1,7 @@
+ORDER: 0 1 2 3 4
+=== PART 2 ===
+WAVE 0: 0
+WAVE 1: 1 2
+WAVE 2: 3 4
+MAX WAVE: 2
+AVG WAVE: 1.20

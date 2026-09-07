@@ -1,0 +1,7 @@
+go s
+go n
+take keycard
+go s
+go s
+go e
+win

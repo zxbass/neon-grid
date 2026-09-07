@@ -1,0 +1,6 @@
+You are in the Neon Lounge.
+Exits: n s
+Items: [ram]
+=== PART 2 ===
+WIN: You jacked into the Black Gate terminal.
+Moves: 7  Items: keycard

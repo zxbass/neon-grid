@@ -1,0 +1,3 @@
+CONNECTIONS: 3  MESSAGES: 7  DELIVERED: 14
+=== PART 2 ===
+LOG: 7 lines, first: [crow] ready

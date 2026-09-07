@@ -61,6 +61,7 @@ Full audit of missions 002–200 (5 parallel agents, Sep 2026) found task↔data
 data (user decision), update task "Вход" sections accordingly.
 
 ### 002–040 findings (fix task text; where noted fix data)
+
 - 002: part2 example `64 1 0 -> 0xC0` contradicts own rule (64 > 63 → SIZE_OVERFLOW).
   FIXED (2026-09-07): data part2 → `63 1 1`, expected → `0xFF`, task example → `63 1 1 -> 0xFF`.
   Part1 example byte was `0x6A` with wrong bit math (0x6A has bit6 set → FAST=yes); input `AA`
@@ -99,6 +100,7 @@ data (user decision), update task "Вход" sections accordingly.
   image.bmp (3946.81); task example -> `0 255 0 -> 2`.
 
 ### 081–100 findings
+
 - 081: FIXED (2026-09-07): task hint now says NUL-padded name, trim at first NUL;
   content trim noted.
 - 083: BLOCKER — data/083 has only expected.txt, `camera.exe` referenced by stub/comment missing
@@ -119,6 +121,7 @@ data (user decision), update task "Вход" sections accordingly.
 - 099: FIXED (2026-09-07): task part2 shows the FRAME 3 delta line and `(12,8)` (no space).
 
 ### 101–110 findings (regenerated task-first; 104/109 no data dirs)
+
 - 101: strings.bin -> blob.bin (ASCII ≥4 + UTF-16LE + enc:hex); part2 = filter
   FLAG/key/pass/token (case-insensitive) over all string kinds; example decoded line fixed
   to `purge_token`. Regenerated.
@@ -140,6 +143,7 @@ data (user decision), update task "Вход" sections accordingly.
   gen166 (new A* maze), gen172 (now writes pieces.txt) — they previously regenerated stale data.
 
 ### 111–140 findings (data verified vs task algorithm; expected authoritative)
+
 - 134: newIV in expected part1 decrypts to `SEND 988 TO CROW!!`, task/part2 say `SEND 999`
   (positions 5-7 need 0x08,0x09,0x09 → IV `41414141414948484141414141414141`). FIX expected part1.
   FIXED (2026-09-07): regenerated — original plaintext `SEND 111 TO CROW!!`, flip bit 0x08 at IV
@@ -161,11 +165,12 @@ data (user decision), update task "Вход" sections accordingly.
 - 123 (minor): FIXED (2026-09-07): task now decodes the provided `data/123/dial.wav` (no synthesis).
 
 ### 141–170 findings
-- 166: task says A* (shortest path) but expected is a 95-step DFS snake
+
+- 166: task says A\* (shortest path) but expected is a 95-step DFS snake
   (empty 8×12, S=(0,0), E=(7,0),
-  shortest is 7). FIX: task → DFS description or data → true A* path.
-  FIXED (2026-09-07, user decision): regenerated under real A* — new 7×12 maze map with walls
-  (unique 35-step shortest path), expected.txt = LEN 35 + PATH, task rewritten (A*: f=g+h
+  shortest is 7). FIX: task → DFS description or data → true A\* path.
+  FIXED (2026-09-07, user decision): regenerated under real A\* — new 7×12 maze map with walls
+  (unique 35-step shortest path), expected.txt = LEN 35 + PATH, task rewritten (A\*: f=g+h
   Manhattan, tie-breaks min f → min g → insertion order, neighbors R/L/U/D). Reference: sol/grid.go
   (AStar).
 - 150 (minor): FIXED (2026-09-07): task notes trimming the CONTENT at end-of-line.
@@ -173,6 +178,7 @@ data (user decision), update task "Вход" sections accordingly.
   real file offsets — standard parse now yields .text size 16 and .shstrtab.
 
 ### 171–200 findings
+
 - 172: BLOCKER — `data/172/pieces.txt` referenced by task missing (dir has only expected.txt).
   FIX: generate pieces.txt.
   FIXED (2026-09-07): pieces.txt = `I O T S Z J L I` (recovered from generator in
@@ -205,6 +211,7 @@ data (user decision), update task "Вход" sections accordingly.
   FIXED (2026-09-07): Content-Length 13->12, expected LENGTH: 12.
 
 ### Todo order (for next session)
+
 1. 002 quick fix (input + task example) — DONE (2026-09-07): part2 `63 1 1 -> 0xFF`, example 0xAA
 2. Regenerate 101–110 (8 missions: blob.bin/UTF-16/enc:, disassembler, crackme rotr32, license
    patch, ELF symtab, 15-opcode VM, JS deobf, PKUP) + fix ambiguous task texts (102: instruction
@@ -215,7 +222,7 @@ data (user decision), update task "Вход" sections accordingly.
    — DONE (2026-09-07): 134 regenerated (SEND 111 -> flip 0x08 -> SEND 999), 137 untemper fixed
    (MT outputs were already standard — audit's "true outputs" were wrong), 140 regenerated with a
    shared 22-byte RC4 keystream (P2 decrypts)
-5. 166: DFS vs A* decision — DONE (2026-09-07): regenerated under real A* (unique 35-step path)
+5. 166: DFS vs A-star decision — DONE (2026-09-07): regenerated under real A\* (unique 35-step path)
 6. 171–200: 177/181 (task), 182/183/186/199 (data), 185/188 (task notes)
    — DONE (2026-09-07): 177/181/185 task text, 182/183/186/188/199 data+generators (see findings)
 7. 002–040 + 081–100 task-text fixes
@@ -227,3 +234,49 @@ data (user decision), update task "Вход" sections accordingly.
    — DONE (2026-09-07): go build/vet/sol green; generators deterministic (re-run no diffs);
    MD013 clean (wrapped >100 lines in tasks/201, tasks/205, AGENTS.md), MD024 siblings_only OK;
    minor findings closed: 116 NOT A BUG, 123/150 task text, 152 ELF section headers rewritten.
+
+## Missions 041-080: file-based conversions (ALL DONE 2026-09-07)
+
+These 40 missions were originally written as live-network exercises (TCP/HTTP/DNS
+clients/servers, scanners, TUI games). Per user decision they now use **deterministic
+file-based data**: each mission reads `data/NNN/*` (captures, transcripts, packet dumps,
+configs) and `Part1()`/`Part2()` parse them into the `expected.txt` output. Task
+"Вход"/"Данные" sections describe the file formats; goal text is kept where it still fits
+(parse instead of connect).
+
+Conventions:
+
+- Generators per batch: `cmd/gendata/gen_041_050.go`, `gen_051_060.go`,
+  `gen_061_070.go`, `gen_071_080.go`; self-register in `init()`.
+- Data deterministic: no live network, no unseeded RNG.
+- `expected.txt` via `s.expected(id, part1, part2)`; tests = standard `kit.Expected`
+  pattern (rewrite the no-op stubs so they call `Part1()`/`Part2()`).
+- Reference pattern: `cmd/gendata/gen_041_050.go` + `data/041..050`.
+- 041-050 (DONE 2026-09-07): ping/banner from hosts.txt+banners.txt, echo.log stats,
+  HTTP response parse, DNS reply.bin (compression + 3 answers), chat transcript,
+  FTP session.txt, WebSocket accept (RFC 6455) + frame.bin, port list, proxy
+  traffic.log, banner fingerprinting.
+- 051-060 (DONE 2026-09-07): all 10 converted + verified (052/056/059 recomputed
+  independently). Mission models: 051 UDP datagram capture (seq/crc), 052 ICMP request
+  build + reply checksum (real values, old example 58 05 was wrong), 053 pcap 3-record
+  SYN handshake, 054 fragment frames 0x77+crc8 reassembly, 055 hop log chain, 056
+  ARQ frame/ACK window1+window4, 057 gossip BFS + wave sim, 058 LPM routes + forward
+  path (LOOP DETECTED), 059 CRC32 brute-force count (65536 hits), 060 ASCII-VNC
+  screen.dump full+delta frames.
+- 061-070 (DONE 2026-09-07): all 10 converted from TUI exercises + verified (062/066/069/070
+  recomputed by an independent script; 063 ships validated for non-touching placement).
+  Mission models: 061 progress bar + dashboard frame from dash.txt, 062 snake sim from
+  test_keys.txt/food.txt (dies at tick 27, score 3), 063 battleship parse board.txt +
+  play shots.txt (VICTORY after 24 shots), 064 render art.txt + draw cursor line row 0,
+  065 /proc snapshot from stat/meminfo/loadavg + top-5 procs, 066 bounce sim from
+  bounce.txt (50 positions + final frame with 4-position trail), 067 quest.txt rooms +
+  commands.txt (7 moves, need: keycard lockout), 068 HTML pages + nav commands
+  (index -> login -> index -> back -> login -> flag), 069 editor undo/redo snapshot
+  stacks (iA/d/iB/u/u/r/r/j), 070 XOR-0x5A codes + rounds.txt (3/5 passed, GRANTED).
+- 071-080 (DONE 2026-09-07): all 10 converted + verified (072/075/076/078 recomputed by
+  an independent script). Mission models: 071 chat transcript stats, 072 W=3 pool
+  (greedy vs static chunks), 073 scan params (waves + rate-limit queue), 074 recorded
+  race runs + fixed times, 075 RR counts + health-driven distribution, 076 FIFO/prio +
+  W=2 round-robin (quantum 10, prio>=7 gets 2 quanta), 077 timeout pairs + PIN brute
+  force budget, 078 ops.log apply + (seq,node) merge, 079 retry/backoff + prio/TTL
+  queue (step 100ms), 080 access.log stats + suspicious filter.

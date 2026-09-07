@@ -1,0 +1,5 @@
+1 A SET k 10
+2 B SET m 2
+4 B SET z 99
+5 B SET x 2
+7 B SET x 7

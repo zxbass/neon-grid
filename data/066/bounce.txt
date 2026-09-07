@@ -1,0 +1,6 @@
+W 40
+H 20
+start 5 5
+dx 1
+dy 2
+steps 50

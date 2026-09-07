@@ -1,0 +1,37 @@
+   A B C D E F G H I J
+ 1 ~####~###~
+ 2 ~~~~~~~~~~
+ 3 ~~~~~~~~~#
+ 4 ###~~~~~~~
+ 5 ~~~~~~~~~~
+ 6 ~~~~##~~~~
+ 7 ~#~~~~~##~
+ 8 ~~~~~~~~~~
+ 9 ~~##~~#~~~
+10 #~~~~~~~~~
+=== PART 2 ===
+F1 MISS
+F4 MISS
+A5 MISS
+J10 MISS
+B1 HIT
+C1 HIT
+D1 HIT
+E1 HIT
+G1 HIT
+H1 HIT
+I1 HIT
+A4 HIT
+B4 HIT
+C4 HIT
+E6 HIT
+F6 HIT
+H7 HIT
+I7 HIT
+C9 HIT
+D9 HIT
+J3 HIT
+G9 HIT
+B7 HIT
+A10 HIT
+VICTORY after 24 shots (hits 20, misses 4)

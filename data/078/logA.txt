@@ -1,0 +1,4 @@
+1 A SET k 10
+3 A SET m 1
+5 A SET x 1
+6 A DEL m

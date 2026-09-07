@@ -1,0 +1,3 @@
+W=3  N=10  T=100ms  (single=280ms, speedup=2.8x)
+=== PART 2 ===
+STATIC: 160ms  DYNAMIC: 100ms  (better: dynamic)

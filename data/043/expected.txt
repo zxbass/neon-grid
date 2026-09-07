@@ -1,0 +1,9 @@
+STATUS: 200 OK
+HEADERS:
+server: omegadyn/2.1
+content-type: text/plain
+content-length: 47
+BODY:
+MESSAGE FROM THE GRID: WE ARE MANY.
+=== PART 2 ===
+FLAG: FLAG{HTTP_IS_OLD_SCHOOL}

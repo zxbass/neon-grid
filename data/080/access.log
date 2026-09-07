@@ -1,0 +1,24 @@
+2049-12-01 03:14:15 10.0.0.7 USER crow ACTION login OK
+2049-12-01 03:14:16 10.0.0.8 USER zen ACTION read plan.doc OK
+2049-12-01 03:14:17 10.0.0.9 USER ghost ACTION sudo rm -rf /tmp/x OK
+2049-12-01 03:14:18 10.0.0.7 USER crow ACTION read map.bin OK
+2049-12-01 03:14:19 10.0.0.8 USER zen ACTION write log.raw OK
+2049-12-01 03:14:20 10.0.0.10 USER reave ACTION delete data:users.db OK
+2049-12-01 03:14:21 10.0.0.7 USER crow ACTION write vault.key OK
+2049-12-01 03:14:22 10.0.0.8 USER zen ACTION read plan.doc OK
+2049-12-01 03:14:23 10.0.0.9 USER ghost ACTION login OK
+2049-12-01 03:14:24 10.0.0.10 USER reave ACTION scan 10.0.0.0/24 OK
+2049-12-01 03:14:25 10.0.0.7 USER crow ACTION delete old.tmp OK
+2049-12-01 03:14:26 10.0.0.11 USER miko ACTION login OK
+2049-12-01 03:14:27 10.0.0.8 USER zen ACTION sudo apt update OK
+2049-12-01 03:14:28 10.0.0.9 USER ghost ACTION read ghost.log OK
+2049-12-01 03:14:29 10.0.0.7 USER crow ACTION login OK
+2049-12-01 03:14:30 10.0.0.10 USER reave ACTION write shadow.db OK
+2049-12-01 03:14:31 10.0.0.8 USER zen ACTION read plan.doc OK
+2049-12-01 03:14:32 10.0.0.9 USER ghost ACTION rm ghost.old OK
+2049-12-01 03:14:33 10.0.0.11 USER miko ACTION read mail.txt OK
+2049-12-01 03:14:34 10.0.0.7 USER crow ACTION sudo scan 10.0.0.0/24 OK
+2049-12-01 03:14:35 10.0.0.7 USER crow ACTION read grid.map OK
+2049-12-01 03:14:36 10.0.0.8 USER zen ACTION login OK
+2049-12-01 03:14:37 10.0.0.9 USER ghost ACTION write stash.bin OK
+2049-12-01 03:14:38 10.0.0.7 USER crow ACTION write manifest.txt OK

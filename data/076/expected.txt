@@ -1,0 +1,4 @@
+fifo: t1 t2 t3 t4 t5  total=140ms
+prio: t3 t1 t5 t2 t4  total=140ms
+=== PART 2 ===
+W=2 RR: avg_delay=64.0ms (t1=50 t2=80 t3=40 t4=70 t5=80)

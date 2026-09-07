@@ -1,0 +1,9 @@
+range 1 1024
+concurrency 50
+pulse 4
+delay 200
+22 OPEN
+80 OPEN
+443 FILTERED
+1200 OPEN
+8080 OPEN

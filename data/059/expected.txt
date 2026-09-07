@@ -1,0 +1,4 @@
+HITS: 65536
+=== PART 2 ===
+WORKERS: 10  CHUNKS: 4096  HITS: 65536
+DONE: 65536 hits (241 chunks retried)

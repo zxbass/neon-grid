@@ -1,0 +1,11 @@
+CPU:  12.3%
+MEM:  4.2 GiB / 16 GiB (26%)
+LOAD: 0.34 0.21 0.18
+=== PART 2 ===
+CPU:  12.3%  MEM: 26%  LOAD: 0.34 0.21 0.18
+PID  NAME             CPU%
+777  neongrid         4.5
+204  chrome           3.2
+8888 nginx            2.5
+1234 kworker          2.3
+5555 node             2.0

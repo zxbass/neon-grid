@@ -1,0 +1,10 @@
+12:00:00 CONNECT crow
+12:00:01 CONNECT zen
+12:00:02 CONNECT ghost
+12:00:05 [crow] ready
+12:00:07 [zen] target locked
+12:00:09 [ghost] copy that
+12:00:12 [crow] reading map
+12:00:14 [zen] found exit
+12:00:16 [ghost] too slow
+12:00:20 [ghost] left

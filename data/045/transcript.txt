@@ -1,0 +1,5 @@
+[CROW] ready
+[ZEN] ready
+[CROW] target locked
+[ZEN] copy that
+[system] CROW lost link

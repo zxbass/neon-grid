@@ -1,0 +1,8 @@
+USER crow -> 200 OK
+LIST
+boot.bin	512
+map.raw	4096
+200 END
+GET boot.bin -> 512 bytes
+USER agent.ops -> 200 OK
+GET vault.key -> 2048 bytes

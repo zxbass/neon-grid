@@ -1,0 +1,5 @@
+USER crow -> 200 OK
+GET boot.bin -> 512 bytes
+GET vault.key -> 2048 bytes
+=== PART 2 ===
+USER agent.ops -> 200 OK

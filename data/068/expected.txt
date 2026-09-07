@@ -1,0 +1,9 @@
+TITLE: OMEGA-DYNE // Corporate Hub
+BODY: Welcome, citizen. Trust us.
+=== PART 2 ===
+> 1
+> 0
+> back
+> 1
+TITLE: FLAG PAGE
+BODY: FLAG{TUI_SURFING_IS_PURE}

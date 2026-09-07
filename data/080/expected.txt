@@ -1,0 +1,7 @@
+ACTIONS: crow:8 zen:6 ghost:5 reave:3 miko:2
+TOP: crow zen ghost
+=== PART 2 ===
+SUSPICIOUS: 6
+  ghost: sudo rm -rf /tmp/x
+  reave: delete data:users.db
+MERGE CHECK: parts=4 rows=24 matches_single=6

@@ -1,0 +1,4 @@
+FINAL: a=9 b=7 c=DELETED
+JOURNAL: 9 entries
+=== PART 2 ===
+CONVERGED: k=10 m=DELETED x=7 z=99

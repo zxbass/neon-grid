@@ -1,0 +1,22 @@
+# 1
+name: Neon Lounge
+desc: You are in the Neon Lounge.
+exits: n=2 s=3
+items: ram
+
+# 2
+name: Back Alley
+desc: A narrow alley behind the Neon Lounge.
+exits: s=1
+items: keycard
+
+# 3
+name: Server Room
+desc: Rows of servers hum in the dark.
+exits: n=1 e=4
+need: keycard
+
+# 4
+name: Black Gate Terminal
+desc: The Black Gate terminal looms before you.
+exits: w=3
