@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"encoding/hex"
 	"math"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -499,5 +501,142 @@ func TestMission033Canonical(t *testing.T) {
 func TestRot13Sample(t *testing.T) {
 	if !strings.Contains(Rot13("GUR TEVQ VF NYVIR"), "THE GRID IS ALIVE") {
 		t.Fatal("rot13 sample failed")
+	}
+}
+
+// ---------------------------------------------------------------- 201-210 Performance pack
+
+func perfRoot(t *testing.T) string {
+	t.Helper()
+	dir, err := os.Getwd()
+	if err != nil {
+		dir = "."
+	}
+	for {
+		if _, err := os.Stat(filepath.Join(dir, "go.mod")); err == nil {
+			return dir
+		}
+		parent := filepath.Dir(dir)
+		if parent == dir {
+			t.Fatal("go.mod not found")
+		}
+		dir = parent
+	}
+}
+
+func perfRead(t *testing.T, id, name string) []byte {
+	t.Helper()
+	b, err := os.ReadFile(filepath.Join(perfRoot(t), "data", id, name))
+	if err != nil {
+		t.Fatalf("read data/%s/%s: %v", id, name, err)
+	}
+	return b
+}
+
+func perfExpected(t *testing.T, id string) (p1, p2 string) {
+	t.Helper()
+	b := perfRead(t, id, "expected.txt")
+	parts := strings.SplitN(string(b), "\n=== PART 2 ===\n", 2)
+	return parts[0], strings.TrimRight(parts[1], "\n")
+}
+
+func TestMission201PerfProfile(t *testing.T) {
+	d := perfRead(t, "201", "profile.txt")
+	w1, w2 := perfExpected(t, "201")
+	if g := PerfProfileHot(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfProfileAlloc(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission202PerfRecords(t *testing.T) {
+	d := perfRead(t, "202", "records.bin")
+	w1, w2 := perfExpected(t, "202")
+	if g := PerfRecordsDump(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfRecordsSum(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission203PerfPairs(t *testing.T) {
+	d := perfRead(t, "203", "values.txt")
+	w1, w2 := perfExpected(t, "203")
+	if g := PerfPairsDump(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfPairsHex(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission204PerfMatrix(t *testing.T) {
+	d := perfRead(t, "204", "matrix.bin")
+	w1, w2 := perfExpected(t, "204")
+	if g := PerfMatrixSum(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfMatrixCols(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission205PerfPackets(t *testing.T) {
+	d := perfRead(t, "205", "packets.bin")
+	w1, w2 := perfExpected(t, "205")
+	if g := PerfPacketsCRC(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfPacketsCheck(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission206PerfBits(t *testing.T) {
+	d := perfRead(t, "206", "values.bin")
+	w1, w2 := perfExpected(t, "206")
+	if g := PerfValuesPopcount(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfValuesBitReverse(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission207PerfRecords(t *testing.T) {
+	d := perfRead(t, "207", "records.bin")
+	w1, w2 := perfExpected(t, "207")
+	if g := PerfRecordFields(d); g != w1 {
+		t.Fatalf("Part1: got %q want %q", g, w1)
+	}
+	if g := PerfRecordZSum(d); g != w2 {
+		t.Fatalf("Part2: got %q want %q", g, w2)
+	}
+}
+
+func TestMission208PerfTopKeys(t *testing.T) {
+	d := perfRead(t, "208", "index.bin")
+	w1, w2 := perfExpected(t, "208")
+	if g := PerfTopKeys(d); g != w1 || g != w2 {
+		t.Fatalf("parts: got %q want %q / %q", g, w1, w2)
+	}
+}
+
+func TestMission209PerfEvents(t *testing.T) {
+	d := perfRead(t, "209", "events.bin")
+	w1, w2 := perfExpected(t, "209")
+	if g := PerfEventsSummary(d); g != w1 || g != w2 {
+		t.Fatalf("parts: got %q want %q / %q", g, w1, w2)
+	}
+}
+
+func TestMission210PerfBlocks(t *testing.T) {
+	d := perfRead(t, "210", "blocks.bin")
+	w1, w2 := perfExpected(t, "210")
+	if g := PerfBlocksSummary(d); g != w1 || g != w2 {
+		t.Fatalf("parts: got %q want %q / %q", g, w1, w2)
 	}
 }

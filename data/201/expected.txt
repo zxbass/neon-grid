@@ -1,0 +1,3 @@
+HOT: checksum_scan
+=== PART 2 ===
+ALLOC: string_join
