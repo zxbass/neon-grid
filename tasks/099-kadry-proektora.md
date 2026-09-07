@@ -35,7 +35,8 @@ FRAME 2: 1 rect, 48 px changed
 прямоугольника:
 
 ```text
-FRAME 3: pointer at (12, 8) size 4x4 color=7
+FRAME 3: 1 rect, 16 px changed
+FRAME 3: pointer at (12,8) size 4x4 color=7
 ```
 
 ## Подсказки

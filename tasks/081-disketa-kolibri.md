@@ -40,7 +40,7 @@ FAT12 1440KB  bytes/sector=512  clusters=2847  root=224
 
 1. Найти в корневом каталоге файл `SECRET.TXT`;
 2. Пройти цепочку кластеров через FAT;
-3. Собрать байты и вывести содержимое.
+3. Собрать байты и вывести содержимое (обрежь по первому NUL).
 
 ### Выход
 
@@ -55,6 +55,7 @@ THE COURIER MOVES AT MIDNIGHT
   `fat[1]|fat[2]<<8` — аккуратно с битами (взять по 12).
 - Данные кластера: `sector = fat_start + sectors_per_fat*2 + (cluster-2)*sectors_per_cluster`.
 - Цепочка: `next = fat_value(cluster)`; конец — `>= 0xFF8`.
-- Имя файла — uppercase без точки: `SECRET  TXT` → `SECRET.TXT`.
+- Имя файла — 8+3 байта, дополнено NUL-ами (`SECRET\x00\x00TXT`);
+  обрежь по первому NUL и собери как `SECRET.TXT`.
 
 (End of file - total 56 lines)

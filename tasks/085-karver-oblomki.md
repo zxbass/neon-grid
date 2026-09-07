@@ -40,8 +40,8 @@ ZIP  @ 0x00300000
 Вырежи байты `[start, end]` в файлы `carved_N.ext` и выведи их размеры:
 
 ```text
-carved_0.png 12345 bytes
-carved_1.jpg 89222 bytes
+carved_0.jpg 89222 bytes
+carved_1.png 12345 bytes
 carved_2.zip 4051 bytes
 ```
 

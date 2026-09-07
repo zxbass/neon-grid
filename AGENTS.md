@@ -99,22 +99,22 @@ data (user decision), update task "Вход" sections accordingly.
   image.bmp (3946.81); task example -> `0 255 0 -> 2`.
 
 ### 081–100 findings
-- 081: hint says space-padded filename, file is NUL-padded (`SECRET\x00\x00TXT`); content NUL-padded
-  to 512, expected trims NULs (task doesn't say).
+- 081: FIXED (2026-09-07): task hint now says NUL-padded name, trim at first NUL; content trim noted.
 - 083: BLOCKER — data/083 has only expected.txt, `camera.exe` referenced by stub/comment missing
   everywhere. Mission unsolvable. FIX: generate PE file.
   FIXED (2026-09-07): `camera.exe` generated (PE32, 5 sections, entry 0x401000, subsys GUI, .rdata
   strings pw_let_the_raven_out/pass_is_not_here/OMEGA-DYNE — matches expected.txt), un-ignored in
   `.gitignore` (`!data/083/camera.exe`) and committed.
-- 084: GPT header says partition-array LBA 2 (empty), real MERCURY entry at LBA 4; backup GPT at
-  LBA 4096 empty. FIX data or task.
-- 085: part2 example `carved_0.png/carved_1.jpg` swapped vs part1 order & expected (`carved_0.jpg...`).
-- 086: WAL replay yields 4 keys (d=DELETED) but expected says 3 entries, omits d. FIX data/expected.
-- 089: TOTAL_BYTES expected 2048 vs 2047 by own merge rule (gap < 4) — likely off-by-one.
-- 093: expected lists FRAME 0/1/2 but GIF has 4 image blocks (KEY LAYER uses all 4).
-- 094: example `SRC: 320x200 OUT: 80x50` contradicts height rule ×0.5 (would be 80x25).
-- 097: task says "XOR 0xA5 then swap nibbles"; data requires swap-then-XOR. FIX task.
-- 099: expected part2 has extra `FRAME 3:` line and `pointer at (12,8)` vs example `(12, 8)`.
+- 084: NOT A BUG — partition array IS at LBA 2 (4 entries at LBA 2-5); MERCURY is entry index 2
+  (LBA 4) and is findable per the task (type GUID left zero; backup GPT unused by the task).
+- 085: FIXED (2026-09-07): task example -> carved_0.jpg / carved_1.png / carved_2.zip.
+- 086: FIXED (2026-09-07): removed `SET d`/`DEL d` ops from WAL; now 10 ok + 1 corrupted, final a/b/c.
+- 089: FIXED (2026-09-07): base fill 0xFF + `byte(j+1)` fill removes byte coincidences; computed
+  TOTAL_BYTES = 2048 (was hardcoded 2048 but real diff gave 2047).
+- 093: NOT A BUG — GIF has 4 image blocks and expected lists FRAME 0/1/2/3 (audit saw stale data).
+- 094: FIXED (2026-09-07): task example -> OUT: 80x25 (h * wRatio / 2).
+- 097: FIXED (2026-09-07): task now describes encryption XOR-then-swap, decode swap-then-XOR.
+- 099: FIXED (2026-09-07): task part2 shows the FRAME 3 delta line and `(12,8)` (no space).
 
 ### 101–110 findings (regenerated task-first; 104/109 no data dirs)
 - 101: strings.bin -> blob.bin (ASCII ≥4 + UTF-16LE + enc:hex); part2 = filter
@@ -215,4 +215,6 @@ data (user decision), update task "Вход" sections accordingly.
 7. 002–040 + 081–100 task-text fixes
    — 002–040 DONE (2026-09-07): 003/004/006/007/008/009/010/012/013/014/016/017/018/020/021/022/023/
    027/030/032/033/037/039 fixed (see findings); 011 confirmed NOT A BUG
+   — 081–100 DONE (2026-09-07): 081/085/086/089/094/097/099 fixed (see findings); 084/093 confirmed
+   NOT A BUG
 8. Final: build/vet/sol green, markdownlint clean, re-audit

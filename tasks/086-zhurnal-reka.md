@@ -27,7 +27,7 @@
 Примени валидные операции к KV-стору и выведи состояние:
 
 ```text
-WAL: 12 ok, 1 corrupted
+WAL: 10 ok, 1 corrupted
 FINAL: a=1 b=2 c=DELETED
 ```
 
@@ -44,7 +44,7 @@ FINAL: a=1 b=2 c=DELETED
 ### Выход
 
 ```text
-APPLIED: 12  SKIPPED: 1 (truncated tail)
+APPLIED: 10  SKIPPED: 1 (truncated tail)
 SNAPSHOT: a=1 b=2 c=DELETED (3 entries)
 ```
 
