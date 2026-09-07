@@ -1,4 +1,8 @@
-SYMBOLS: 6
-ENTRY: main @ 0x00401000
+FUNCS:
+  0x401000 init         size=64
+  0x401040 validate_key size=512
+  0x401240 decrypt      size=256
 === PART 2 ===
-LARGEST GAP: 0x004010A0-0x00401200 (352 bytes)
+init -> validate_key
+validate_key -> decrypt
+decrypt -> (неизвестно)

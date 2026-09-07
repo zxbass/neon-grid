@@ -1,0 +1,3 @@
+var _0x1 = (0x1F + 0x20) * 3 - 0x3C + 0x7;
+var _0x2 = "\x4e\x45\x4f\x4e";
+if (_0x2 === "NEON") { return true; } else { return false; }

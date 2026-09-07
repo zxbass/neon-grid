@@ -1,3 +1,5 @@
-SIMPLIFIED: x = a + b
+var _0x1 = 136;
 === PART 2 ===
-FOLDED: x = 5
+a = 136;
+b = "NEON";
+return b === "NEON";

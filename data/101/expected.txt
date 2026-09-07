@@ -1,9 +1,10 @@
-STR: "NEON GRID"
-STR: "root"
-STR: "/bin/sh"
-STR: "zen@neon"
-STR: "CROW"
-STR: "mercury"
+0x00000000: NEON GRID
+0x00000010: admin
+0x00000020: FLAG{strings_are_easy}
+0x00000040: passwd_hash
+0x00000140: enc:70757267655f746f6b656e
 === PART 2 ===
-STRINGS: 6
-LONGEST: NEON GRID
+0x00000020: FLAG{strings_are_easy}
+0x00000040: passwd_hash
+0x00000100: utf16: session_key
+0x00000140: decoded: purge_token

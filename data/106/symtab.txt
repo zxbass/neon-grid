@@ -1,6 +1,0 @@
-00401000 main
-00401020 read_input
-004010A0 check_key
-00401200 crypto_dec
-004012C0 win_func
-00401400 cleanup

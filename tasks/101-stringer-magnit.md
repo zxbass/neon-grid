@@ -35,7 +35,7 @@
 ```text
 0x0000012C: FLAG{strings_are_easy}
 0x00000B00: utf16: session_key
-0x00000D40: decoded: the_purge
+0x00000D40: decoded: purge_token
 ```
 
 ## Подсказки

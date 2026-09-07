@@ -118,6 +118,26 @@ data (user decision), update task "Вход" sections accordingly.
 - 097: task says "XOR 0xA5 then swap nibbles"; data requires swap-then-XOR. FIX task.
 - 099: expected part2 has extra `FRAME 3:` line and `pointer at (12,8)` vs example `(12, 8)`.
 
+### 101–110 findings (regenerated task-first; 104/109 no data dirs)
+- 101: strings.bin -> blob.bin (ASCII ≥4 + UTF-16LE + enc:hex); part2 = filter
+  FLAG/key/pass/token (case-insensitive) over all string kinds; example decoded line fixed
+  to `purge_token`. Regenerated.
+- 102: prog.bin -> code.bin, opcode table rewritten (1–4 bytes: NOP/LDA r/JMP addr16/LD r,addr16/
+  INC r/DEC r/HLT/RET); task defined 0x01=2B, 0x03=4B. Regenerated.
+- 103: old XOR data (stored.txt/check.txt) dropped; pure rotl32 crackme -> PASSWORD: 390M38aZ
+  (MITM split 4+4, verified v8=0xCAFEBABE). Regenerated.
+- 105: bad.bin -> license.bin (LICENSE VALID/INVALID, je at 0x80, 74->EB patch, SHA-256). Regenerated.
+- 106: symtab.txt -> real ELF64 elf.bin (.symtab init/validate_key/decrypt + .text call rel32,
+  call graph in expected); task gained a "Данные" section. Regenerated.
+- 107: bytecode.bin -> vm.bin (IronCore 15-opcode table); x1 = 2*x0 + 3, RESULT(5)=13; task part2
+  output = ровно две строки. Regenerated.
+- 108: snippet/values.txt -> fog.js; part1 folds constants (`var _0x1 = 136;`), part2 renames +
+  decodes + folds if/else; task example fixed. Regenerated.
+- 110: pack.bin -> packed.bin (PKUP header + XOR key CELLOPHANE); inner VM x1 = x0*3+4,
+  RESULT(7)=25. Regenerated.
+- Generators rewritten in cmd/gendata/gen_101_110.go; also fixed gen002 (part2 63 1 1 -> 0xFF),
+  gen166 (new A* maze), gen172 (now writes pieces.txt) — they previously regenerated stale data.
+
 ### 111–140 findings (data verified vs task algorithm; expected authoritative)
 - 134: newIV in expected part1 decrypts to `SEND 988 TO CROW!!`, task/part2 say `SEND 999`
   (positions 5-7 need 0x08,0x09,0x09 → IV `41414141414948484141414141414141`). FIX expected part1.
@@ -165,6 +185,7 @@ data (user decision), update task "Вход" sections accordingly.
 2. Regenerate 101–110 (8 missions: blob.bin/UTF-16/enc:, disassembler, crackme rotr32, license
    patch, ELF symtab, 15-opcode VM, JS deobf, PKUP) + fix ambiguous task texts (102: instruction
    lengths contradict "1–3 байта"; define 0x01=2B, 0x03=4B)
+   — DONE (2026-09-07): all 8 regenerated task-first (see 101–110 findings), generators rewritten
 3. 083 camera.exe + 172 pieces.txt generators — DONE (2026-09-07), both committed
 4. 134/137/140 data fixes (SEND 999 IV, standard MT19937, RC4 C2)
 5. 166: DFS vs A* decision — DONE (2026-09-07): regenerated under real A* (unique 35-step path)
