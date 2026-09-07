@@ -1,9 +1,9 @@
 # --- Go build artifacts ---
-neon
-neon-grid
-neongrid
-gen
-gendata
+/neon
+/neon-grid
+/neongrid
+/gen
+/gendata
 *.exe
 *.dll
 *.so
