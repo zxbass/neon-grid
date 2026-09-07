@@ -141,11 +141,19 @@ data (user decision), update task "Вход" sections accordingly.
 ### 111–140 findings (data verified vs task algorithm; expected authoritative)
 - 134: newIV in expected part1 decrypts to `SEND 988 TO CROW!!`, task/part2 say `SEND 999`
   (positions 5-7 need 0x08,0x09,0x09 → IV `41414141414948484141414141414141`). FIX expected part1.
+  FIXED (2026-09-07): regenerated — original plaintext `SEND 111 TO CROW!!`, flip bit 0x08 at IV
+  positions 5-7 -> `SEND 999 TO CROW!!` (IV `41414141414949494141414141414141`); verified with AES-CBC.
 - 137: expected MT19937(1337) outputs 2–5 and UNTEMPER(1194544295)=1906655706 are NOT standard
   MT19937 (true: 1125387415 805945116 1523252379 218542195 1162831672; untemper=4037876808).
   Generator's MT is buggy/non-standard. FIX data/expected.
+  CORRECTED (2026-09-07): audit's "true outputs" were wrong — the generator's MT (seed/twist/temper)
+  IS standard, outputs [1125387415 2407456957 681542492 913057000 1194544295] verified against an
+  independent implementation. Only UNTEMPER was buggy — fixed; UNTEMPER(1194544295) = 4037876808.
 - 140: C1^P1 gives keystream matching part2, but C2 does NOT decrypt to `TRAFFIC ROUTED VIA ZEN`
   (22 bytes vs 21-byte keystream). FIX C2/expected.
+  FIXED (2026-09-07): regenerated with shared 22-byte RC4 keystream — P1 = `FLAG=GRID_WEP_IS_DEAD=`,
+  C1 = P1^ks, C2 = P2^ks; attack recovers ks = P1^C1, P2 decrypts to `TRAFFIC ROUTED VIA ZEN`,
+  KEYSTREAM = first 8 bytes of ks.
 - 116 (minor): in `HASH MISMATCH (expected ... got ...)` labels look swapped vs recomputed value.
 - 123 (minor): task says `dial.bin`, data has `dial.wav`; task says "synthesize" but audio provided.
 
@@ -188,6 +196,9 @@ data (user decision), update task "Вход" sections accordingly.
    — DONE (2026-09-07): all 8 regenerated task-first (see 101–110 findings), generators rewritten
 3. 083 camera.exe + 172 pieces.txt generators — DONE (2026-09-07), both committed
 4. 134/137/140 data fixes (SEND 999 IV, standard MT19937, RC4 C2)
+   — DONE (2026-09-07): 134 regenerated (SEND 111 -> flip 0x08 -> SEND 999), 137 untemper fixed
+   (MT outputs were already standard — audit's "true outputs" were wrong), 140 regenerated with a
+   shared 22-byte RC4 keystream (P2 decrypts)
 5. 166: DFS vs A* decision — DONE (2026-09-07): regenerated under real A* (unique 35-step path)
 6. 171–200: 177/181 (task), 182/183/186/199 (data), 185/188 (task notes)
 7. 002–040 + 081–100 task-text fixes
