@@ -10,14 +10,23 @@ import (
 // Mission 033, part 1.
 func HuffmanCodes(freqs map[byte]int) map[byte]string {
 	var h huffmanHeap
-	for sym, f := range freqs {
-		h = append(h, &huffNode{sym: sym, freq: f})
+	// deterministic leaf insertion order (map iteration order is not stable)
+	syms := make([]byte, 0, len(freqs))
+	for sym := range freqs {
+		syms = append(syms, sym)
+	}
+	sort.Slice(syms, func(i, j int) bool { return syms[i] < syms[j] })
+	seq := 0
+	for _, sym := range syms {
+		h = append(h, &huffNode{sym: sym, freq: freqs[sym], seq: seq})
+		seq++
 	}
 	heap.Init(&h)
 	for h.Len() > 1 {
 		a := heap.Pop(&h).(*huffNode)
 		b := heap.Pop(&h).(*huffNode)
-		n := &huffNode{freq: a.freq + b.freq, left: a, right: b}
+		n := &huffNode{freq: a.freq + b.freq, left: a, right: b, seq: seq}
+		seq++
 		heap.Push(&h, n)
 	}
 	root := h[0]
@@ -38,6 +47,7 @@ func HuffmanCodes(freqs map[byte]int) map[byte]string {
 type huffNode struct {
 	sym          byte
 	freq         int
+	seq          int
 	left, right  *huffNode
 }
 
@@ -48,7 +58,10 @@ func (h huffmanHeap) Less(i, j int) bool {
 	if h[i].freq != h[j].freq {
 		return h[i].freq < h[j].freq
 	}
-	return h[i].sym < h[j].sym
+	if h[i].sym != h[j].sym {
+		return h[i].sym < h[j].sym
+	}
+	return h[i].seq < h[j].seq
 }
 func (h huffmanHeap) Swap(i, j int) { h[i], h[j] = h[j], h[i] }
 func (h *huffmanHeap) Push(x any)   { *h = append(*h, x.(*huffNode)) }

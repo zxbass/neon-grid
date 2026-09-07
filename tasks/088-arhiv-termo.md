@@ -18,7 +18,7 @@ CM=8, FLG, MTIME, XFL, OS) + deflate-поток + trailer (CRC32 + ISIZE).
 задача, а вот поток — задача). Распакуй в `payload.tar`:
 
 ```text
-PAYLOAD: 40960 bytes (deflate ok)
+PAYLOAD: 16384 bytes (deflate ok)
 ```
 
 ## Часть 2 — Tar внутри

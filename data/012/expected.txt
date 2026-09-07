@@ -1,5 +1,5 @@
 IHDR len=13 crc=OK
-IDAT len=26 crc=OK
+IDAT len=27 crc=OK
 IEND len=0 crc=OK
 === PART 2 ===
 IHDR CORRUPT

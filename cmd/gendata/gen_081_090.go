@@ -10,6 +10,7 @@ import (
 	"encoding/binary"
 	"fmt"
 	"strings"
+	"time"
 	"unicode/utf16"
 
 	"neon-grid/sol"
@@ -384,6 +385,7 @@ func (s *set) gen088() {
 
 	var gz bytes.Buffer
 	zw := gzip.NewWriter(&gz)
+	zw.ModTime = time.Unix(0, 0) // fixed mtime: deterministic output
 	zw.Write(tarBytes)
 	if err := zw.Close(); err != nil {
 		panic(err)
