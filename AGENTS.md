@@ -156,8 +156,9 @@ data (user decision), update task "Вход" sections accordingly.
   FIXED (2026-09-07): regenerated with shared 22-byte RC4 keystream — P1 = `FLAG=GRID_WEP_IS_DEAD=`,
   C1 = P1^ks, C2 = P2^ks; attack recovers ks = P1^C1, P2 decrypts to `TRAFFIC ROUTED VIA ZEN`,
   KEYSTREAM = first 8 bytes of ks.
-- 116 (minor): in `HASH MISMATCH (expected ... got ...)` labels look swapped vs recomputed value.
-- 123 (minor): task says `dial.bin`, data has `dial.wav`; task says "synthesize" but audio provided.
+- 116 (minor): NOT A BUG — labels verified: stored chain is `expected`, recomputed from tampered log
+  is `got`.
+- 123 (minor): FIXED (2026-09-07): task now decodes the provided `data/123/dial.wav` (no synthesis).
 
 ### 141–170 findings
 - 166: task says A* (shortest path) but expected is a 95-step DFS snake
@@ -167,8 +168,9 @@ data (user decision), update task "Вход" sections accordingly.
   (unique 35-step shortest path), expected.txt = LEN 35 + PATH, task rewritten (A*: f=g+h
   Manhattan, tie-breaks min f → min g → insertion order, neighbors R/L/U/D). Reference: sol/grid.go
   (AStar).
-- 150 (minor): README stream 32nd byte is `\n`; expected CONTENT: omits it (player must trim).
-- 152 (minor): synthetic ELF section-header metadata non-standard (shstrtab offset/name idx).
+- 150 (minor): FIXED (2026-09-07): task notes trimming the CONTENT at end-of-line.
+- 152 (minor): FIXED (2026-09-07): gen152 rewrote section headers with correct 64-bit fields and
+  real file offsets — standard parse now yields .text size 16 and .shstrtab.
 
 ### 171–200 findings
 - 172: BLOCKER — `data/172/pieces.txt` referenced by task missing (dir has only expected.txt).
@@ -222,3 +224,6 @@ data (user decision), update task "Вход" sections accordingly.
    — 081–100 DONE (2026-09-07): 081/085/086/089/094/097/099 fixed (see findings); 084/093 confirmed
    NOT A BUG
 8. Final: build/vet/sol green, markdownlint clean, re-audit
+   — DONE (2026-09-07): go build/vet/sol green; generators deterministic (re-run no diffs);
+   MD013 clean (wrapped >100 lines in tasks/201, tasks/205, AGENTS.md), MD024 siblings_only OK;
+   minor findings closed: 116 NOT A BUG, 123/150 task text, 152 ELF section headers rewritten.
