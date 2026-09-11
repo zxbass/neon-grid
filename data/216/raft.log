@@ -1,0 +1,14 @@
+TERM 1 ELECT node-2
+AE term=1 prev=0 entries=a=1
+ACK node-1
+ACK node-3
+COMMIT idx=1
+AE term=1 prev=1 entries=b=2
+ACK node-1
+AE term=1 prev=1 entries=c=3
+ACK node-3
+TERM 2 ELECT node-5
+AE term=2 prev=2 entries=d=4
+ACK node-1
+ACK node-2
+COMMIT idx=3

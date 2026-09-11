@@ -1,0 +1,7 @@
+a=1
+b=2
+c=3
+=== PART 2 ===
+LOG: 4 entries
+COMMITTED: 3
+LEADER: node-5

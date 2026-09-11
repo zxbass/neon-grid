@@ -1,0 +1,1 @@
+{"server":{"name":"neon-gate","host":"10.0.0.7","port":8080,"debug":false,"tags":["alpha","beta","gamma"],"limits":{"max_conn":64,"timeout_s":30.5}},"owner":{"login":"crow","uid":1337},"features":[{"id":"f1","on":true},{"id":"f2","on":false}]}

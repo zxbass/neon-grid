@@ -1,0 +1,16 @@
+PUT k=a v=1
+PUT k=c v=3
+PUT k=b v=2
+FLUSH
+PUT k=d v=4
+PUT k=a v=10
+GET k=b
+FLUSH
+DEL k=c
+PUT k=e v=5
+COMPACT
+GET k=a
+GET k=c
+PUT k=f v=6
+GET k=f
+FLUSH

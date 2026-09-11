@@ -1,0 +1,8 @@
+GET b: 2
+GET a: 10
+GET c: NOT FOUND
+GET f: 6
+=== PART 2 ===
+SEGMENTS: 2
+ENTRIES: 6
+MISSES: 1

@@ -1,0 +1,12 @@
+t=100 type=read fd=3
+t=140 type=read fd=5
+t=200 type=timeout
+t=250 type=write fd=3
+t=320 type=signal
+t=350 type=read fd=5
+t=500 type=read fd=3
+t=510 type=timeout
+t=640 type=write fd=5
+t=700 type=read fd=5
+t=760 type=signal
+t=800 type=read fd=3

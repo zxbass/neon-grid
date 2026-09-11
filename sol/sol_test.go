@@ -692,3 +692,54 @@ func TestMission172Tetris(t *testing.T) {
 		t.Fatalf("Tetris: got %d cleared lines, want 0", lines)
 	}
 }
+
+// ---------------------------------------------------------------- 211-220 Depth pack
+
+func TestMission211_220(t *testing.T) {
+	type tc struct {
+		id   string
+		p1   func([]byte) string
+		p2   func([]byte) string
+		f1   string
+		f2   string
+	}
+	cases := []tc{
+		{"211", func(d []byte) string { return DeepECCPublic(d) }, func(d []byte) string { return DeepECDHShared(d) }, "curve.txt", "curve.txt"},
+		{"212", func(d []byte) string { return DeepEventsLog(d) }, func(d []byte) string { return DeepEventsSummary(d) }, "events.txt", "events.txt"},
+		{"213", func(d []byte) string { return DeepJSONValues(d) }, func(d []byte) string { return DeepJSONStats(d) }, "config.json", "config.json"},
+		{"214", func(d []byte) string { return DeepDeflateSize(d) }, func(d []byte) string { return DeepDeflateText(d) }, "payload.bin", "payload.bin"},
+		{"215", func(d []byte) string { return DeepLSMReplay(d) }, func(d []byte) string { return DeepLSMStats(d) }, "ops.log", "ops.log"},
+		{"216", func(d []byte) string { return DeepRaftApply(d) }, func(d []byte) string { return DeepRaftStats(d) }, "raft.log", "raft.log"},
+		{"217", func(d []byte) string {
+			sig := perfRead(t, "217", "signal.txt")
+			fir := perfRead(t, "217", "fir.txt")
+			return DeepFIRFilter(sig, fir)
+		}, func(d []byte) string {
+			sig := perfRead(t, "217", "signal.txt")
+			iir := perfRead(t, "217", "iir.txt")
+			return DeepIIRFilter(sig, iir)
+		}, "signal.txt", "signal.txt"},
+		{"218", func(d []byte) string { return DeepAssemble(d) }, func(d []byte) string { return DeepAssembleStats(d) }, "asm.txt", "asm.txt"},
+		{"219", func(d []byte) string { return DeepJITOutput(d, perfRead(t, "219", "limit.txt")) }, func(d []byte) string { return DeepJITLoop(d, perfRead(t, "219", "limit.txt")) }, "prog.bin", "prog.bin"},
+		{"220", func(d []byte) string {
+			key := perfRead(t, "220", "key.txt")
+			nonce := perfRead(t, "220", "nonce.txt")
+			return DeepChaChaText(key, nonce, d)
+		}, func(d []byte) string {
+			key := perfRead(t, "220", "key.txt")
+			nonce := perfRead(t, "220", "nonce.txt")
+			return DeepChaChaBlockHex(key, nonce)
+		}, "secret.bin", "secret.bin"},
+	}
+	for _, c := range cases {
+		w1, w2 := perfExpected(t, c.id)
+		d1 := perfRead(t, c.id, c.f1)
+		if g := c.p1(d1); g != w1 {
+			t.Errorf("%s Part1: got %q want %q", c.id, g, w1)
+		}
+		d2 := perfRead(t, c.id, c.f2)
+		if g := c.p2(d2); g != w2 {
+			t.Errorf("%s Part2: got %q want %q", c.id, g, w2)
+		}
+	}
+}

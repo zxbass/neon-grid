@@ -48,7 +48,7 @@ PASSWORD: x?y?z?  (посчитай)
 проб (не 94^8, а ~8×256). Выведи пароль и подтверди `check == true`:
 
 ```text
-PASSWORD: R4V3N$G0
+PASSWORD: 390M38aZ
 CHECK: true
 ```
 

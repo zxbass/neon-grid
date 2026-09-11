@@ -1,0 +1,7 @@
+NAME: neon-gate
+PORT: 8080
+DEBUG: false
+=== PART 2 ===
+KEYS: 17
+MAX_DEPTH: 3
+STRINGS: 8

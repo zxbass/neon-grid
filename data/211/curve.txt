@@ -1,0 +1,5 @@
+p=97 a=1 b=1
+G=(1,1) order=97
+alice_priv=7
+bob_priv=13
+pub_b=(0,75)

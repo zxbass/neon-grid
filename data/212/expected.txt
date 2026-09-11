@@ -1,0 +1,15 @@
+EVENT 100: read fd=3
+EVENT 140: read fd=5
+EVENT 200: timeout
+EVENT 250: write fd=3
+EVENT 320: signal
+EVENT 350: read fd=5
+EVENT 500: read fd=3
+EVENT 510: timeout
+EVENT 640: write fd=5
+EVENT 700: read fd=5
+EVENT 760: signal
+EVENT 800: read fd=3
+=== PART 2 ===
+COUNTS: read=6 write=2 timeout=2 signal=2
+IDLE: 150 us

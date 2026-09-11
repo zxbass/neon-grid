@@ -1,0 +1,5 @@
+main: NOP
+LDA #B
+JMP done
+INC X
+done: HLT
