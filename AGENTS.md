@@ -74,6 +74,10 @@ use deterministic file-based data (user decision), update task "Вход" sectio
   real bytes `2a 47 52 49 44 2a 41 4c 4c 4f 59 00 00 00 00 00 |*GRID*ALLOY.....|`.
 - 004: FIXED (2026-09-07): task examples corrected — BE=0x00000001, %-5d alignment, arrows
   `0x47454D4F -> GEMO` / `0x41445243 -> ADRC`.
+- 005: FIXED (2026-09-16): task example was stale (`omegadain-boot`/`1048576`/`0xDEADBEEF`) and
+  contradicted the 8-byte name field; replaced with real data values (`omega-b1`/`512`/
+  `0xC040BF3F`) and added a note that the name field is max 8 chars with no NUL when full
+  (table + offsets + generator `gen005` agree; only the example was wrong).
 - 006: FIXED (2026-09-07): task input -> `00000013 00000202 00000040`, example block rewritten
   (READ WRITE INJECT / WRITE bit9(reserved) / SCAN).
 - 007: FIXED (2026-09-07): task example padding `CROW     lvl` (5sp, %-8s + space).

@@ -25,15 +25,18 @@
 | 22 | 2 | u16 LE | версия аппаратуры |
 | 24 | 40 | ascii | описание (до NUL) |
 
+Обе ascii-строки читаются до первого NUL, но NUL в поле может отсутствовать: если имя
+занимает все 8 байт (как `omega-b1`), терминатора нет — поле кончается ровно на границе.
+
 Магия должна быть `FW` (0x46 0x57), иначе — `BAD_MAGIC`.
 
 ### Выход
 
 ```text
 magic    : FW v1.4
-name     : omegadain-boot
-code_len : 1048576
-crc      : 0xDEADBEEF
+name     : omega-b1
+code_len : 512
+crc      : 0xC040BF3F
 api      : 3.2
 hw       : 7.1
 desc     : Primary bootloader rev 2
