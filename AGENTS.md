@@ -81,6 +81,10 @@ use deterministic file-based data (user decision), update task "Вход" sectio
 - 006: FIXED (2026-09-07): task input -> `00000013 00000202 00000040`, example block rewritten
   (READ WRITE INJECT / WRITE bit9(reserved) / SCAN).
 - 007: FIXED (2026-09-07): task example padding `CROW     lvl` (5sp, %-8s + space).
+  AGAIN (2026-09-16): task documented 24-byte records / 6-byte `last_ip`, but data has 26-byte
+  records with 8-byte ip (no IPv4 text fits in 6 chars); table/hints fixed to 26/8, AVG example
+  31257 -> 53711, lore «сто с лишним» -> пять записей. Data/expected untouched (generator and
+  expected agree; only task text was wrong).
 - 008: FIXED (2026-09-07): task inputs/examples -> real `00210000 00220040 EF9FBF7D` and
   `00210000 00220040 8B9FBF7D`; check math now matches.
 - 009: FIXED (2026-09-07): worked example -> rotl5 = 0x4B4B4B4B; task names cargo.bin/batch.bin.
