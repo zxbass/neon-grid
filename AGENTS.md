@@ -91,6 +91,10 @@ use deterministic file-based data (user decision), update task "Вход" sectio
   dropped; real answer `2209075198`) and the hint suggested 365-day-year math — both fixed.
   Generator/expected were correct (`time.Time.Unix()`, leap years included).
 - 009: FIXED (2026-09-07): worked example -> rotl5 = 0x4B4B4B4B; task names cargo.bin/batch.bin.
+  AGAIN (2026-09-16): text lacked the model (what is XORed, byte vs word, roles of
+  cargo/seal/expected/got) and the example used a file that doesn't exist (`01 02 03`); added the
+  byte-wise accumulator explanation, real cargo content, extra hand-check steps, Part 2
+  expected/got clauses and `SEAL OK (0x%08X)`. Data/expected untouched (algorithm verified).
 - 010: FIXED (2026-09-07): task rule -> "группы по 4, между группами один пробел".
 - 011: NOT A BUG — expected art IS derivable from image.bmp (bottom-up render matches; the
   audit's brightness interpretation was wrong). No change.
