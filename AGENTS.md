@@ -87,6 +87,9 @@ use deterministic file-based data (user decision), update task "Вход" sectio
   expected agree; only task text was wrong).
 - 008: FIXED (2026-09-07): task inputs/examples -> real `00210000 00220040 EF9FBF7D` and
   `00210000 00220040 8B9FBF7D`; check math now matches.
+  AGAIN (2026-09-16): DIFF example was still wrong (`2208988800` = 25567 full days, time-of-day
+  dropped; real answer `2209075198`) and the hint suggested 365-day-year math — both fixed.
+  Generator/expected were correct (`time.Time.Unix()`, leap years included).
 - 009: FIXED (2026-09-07): worked example -> rotl5 = 0x4B4B4B4B; task names cargo.bin/batch.bin.
 - 010: FIXED (2026-09-07): task rule -> "группы по 4, между группами один пробел".
 - 011: NOT A BUG — expected art IS derivable from image.bmp (bottom-up render matches; the
