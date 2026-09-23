@@ -11,9 +11,8 @@ func rotl32(x uint32, n int) uint32 {
 	return (x << n) | (x >> (32 - n))
 }
 
-// - acc = 0x5A5A5A5A
 func seal(buf []byte) uint32 {
-	var acc uint32 = 0x5a5a5a5a
+	acc := uint32(0x5a5a5a5a)
 
 	for _, b := range buf {
 		acc = rotl32(acc, 5) ^ uint32(b)
