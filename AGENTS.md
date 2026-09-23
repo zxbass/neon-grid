@@ -2,7 +2,8 @@
 
 NEON//GRID: a Go "coding game" with 200 missions. Each mission is a stub the player implements;
 tests compare `Part1()`/`Part2()` output against `data/NNN/expected.txt`. All docs/comments/expected
-output are in Russian. Go 1.26.5, stdlib only, no external deps.
+output are in Russian. Go 1.26.5, stdlib plus one external dep: `github.com/zxbass/bt`
+(binary cursor helpers used by solutions, e.g. 007).
 
 ## Commands
 

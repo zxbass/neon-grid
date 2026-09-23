@@ -5,8 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"neon-grid/solutions/bt"
 	"neon-grid/solutions/kit"
+
+	"github.com/zxbass/bt"
 )
 
 const (
@@ -53,11 +54,11 @@ func parseDump() ([]Record, bool, error) {
 		}
 		r := Record{}
 		r.Id = id
-		r.Nickname = cur.Str(NicknameSize)
+		r.Nickname = cur.StrOrRest(NicknameSize)
 		r.Level = cur.U8()
 		r.Karma = cur.U8()
 		r.Credits = cur.U32LE()
-		r.LastIp = cur.Str(LastIpSize)
+		r.LastIp = cur.StrOrRest(LastIpSize)
 		recs = append(recs, r)
 	}
 
